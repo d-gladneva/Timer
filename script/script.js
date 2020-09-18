@@ -32,18 +32,18 @@ window.addEventListener('DOMContentLoaded', () => {
                 timerSeconds.textContent = '0'+timer.seconds;
             }
             if (timer.timeRemaining > 0) {
-                setTimeout(upDateClock, 1000);
+             let timeOut = setTimeout(upDateClock, 1000);
             } else {
                 timerHours.textContent = '00';
                 timerMinutes.textContent = '00';
                 timerSeconds.textContent = '00';
-                clearInterval(calcDate);
+                clearTimeout(timeOut);
             }
         };
 
         upDateClock();
     };
 
-    // countTimer('01 october 2020');
-    let calcDate = setInterval(countTimer, 1000, '01 october 2020');
+    countTimer('01 october 2020');
+    // let calcDate = setInterval(countTimer, 1000, '01 october 2020');
 });

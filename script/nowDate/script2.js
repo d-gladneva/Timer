@@ -1,6 +1,4 @@
 window.addEventListener('DOMContentLoaded', () => {
-    let date = new Date();
-    console.log(date.getHours());
     const div = document.querySelector('div');
 
     const getNowDate = (deadLine) => {
@@ -8,6 +6,7 @@ window.addEventListener('DOMContentLoaded', () => {
         let p = document.createElement('p');
 
         const getTimeRemaining = () => {
+            let date = new Date();
             let dateStop = new Date(deadLine).getTime();
             let dateNow = new Date().getTime();
             let timeRemaining = (dateStop - dateNow) / 1000;
@@ -30,18 +29,25 @@ window.addEventListener('DOMContentLoaded', () => {
                 return days[date.getDay()];
             }
 
-            p.textContent = `Сегодня: ${getWeekDay(date)}
-            Текущее время:  ${date.getHours()} : ${date.getMinutes()} : ${date.getSeconds()} ${(date.getHours() > 12) ? 'PM' : 'AM'}
-            До Нового года осталось ${hours} дней`;
 
-            clearInterval(nowDate);
+            let today = `Сегодня: ${getWeekDay(date)}`;
+            let nowTime = `Текущее время:  ${(date.getHours() < 10) ? '0' : ''}${date.getHours()} : ${(date.getMinutes() < 10) ? '0' : ''}${date.getMinutes()} : ${(date.getSeconds() < 10) ? '0' : ''}${date.getSeconds()} ${(date.getHours() > 12) ? 'PM' : 'AM'}`;
+            let toNY = `До Нового года осталось ${hours} дней`;
+
+            div.innerHTML = `
+            <p>${today}</p>
+            <p>${nowTime}</p>
+            <p>${toNY}</p>
+            `;
+
+
+            setTimeout(getTimeRemaining, 1000);
 
         };
-        setInterval(getTimeRemaining, 1000);
+        getTimeRemaining();
     };
 
-    // getNowDate();
-    let nowDate = setInterval(getNowDate, 1000, '30 october 2020');
+    getNowDate('31 december 2020');
 
 });
 
