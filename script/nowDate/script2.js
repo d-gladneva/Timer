@@ -34,6 +34,8 @@ window.addEventListener('DOMContentLoaded', () => {
             Текущее время:  ${date.getHours()} : ${date.getMinutes()} : ${date.getSeconds()} ${(date.getHours() > 12) ? 'PM' : 'AM'}
             До Нового года осталось ${hours} дней`;
 
+            clearInterval(nowDate);
+
         };
         setInterval(getTimeRemaining, 1000);
     };

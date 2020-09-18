@@ -37,6 +37,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 timerHours.textContent = '00';
                 timerMinutes.textContent = '00';
                 timerSeconds.textContent = '00';
+                clearInterval(calcDate);
             }
         };
 
@@ -44,5 +45,5 @@ window.addEventListener('DOMContentLoaded', () => {
     };
 
     // countTimer('01 october 2020');
-    setInterval(countTimer, 1000, '01 october 2020');
+    let calcDate = setInterval(countTimer, 1000, '01 october 2020');
 });
