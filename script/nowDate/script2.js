@@ -4,7 +4,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const getNowDate = (deadLine) => {
 
         let p = document.createElement('p');
-
+        let span = document.createElement('span');
         const getTimeRemaining = () => {
             let date = new Date();
             let dateStop = new Date(deadLine).getTime();
@@ -22,6 +22,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 div.textContent = 'Доброй ночи!';
             }
             div.append(p);
+            p.append(span);
 
             function getWeekDay(date) {
                 let days = ['ВС', 'ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ'];
@@ -34,10 +35,10 @@ window.addEventListener('DOMContentLoaded', () => {
             let nowTime = `Текущее время:  ${(date.getHours() < 10) ? '0' : ''}${date.getHours()} : ${(date.getMinutes() < 10) ? '0' : ''}${date.getMinutes()} : ${(date.getSeconds() < 10) ? '0' : ''}${date.getSeconds()} ${(date.getHours() > 12) ? 'PM' : 'AM'}`;
             let toNY = `До Нового года осталось ${hours} дней`;
 
-            div.innerHTML = `
-            <p>${today}</p>
-            <p>${nowTime}</p>
-            <p>${toNY}</p>
+            p.innerHTML = `
+            <span>${today}</span><br>
+            <span>${nowTime}</span><br>
+            <span>${toNY}</span>
             `;
 
 
