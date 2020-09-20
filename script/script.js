@@ -107,7 +107,7 @@ window.addEventListener('DOMContentLoaded', () => {
             const target = document.getElementById(targetId.substring(1,targetId.length));
             console.log(target);
             const targetPosition = getPosition(target);
-            const offsetTargetPosition = targetPosition - 100;
+            const offsetTargetPosition = targetPosition;
 
             window.scrollTo({
                 top: offsetTargetPosition,
