@@ -80,8 +80,8 @@ window.addEventListener('DOMContentLoaded', () => {
                 animateInterval = requestAnimationFrame(animatePopUp);
                 count++;
                 if (document.documentElement.clientWidth > 768){
-                    if (count < 250) {
-                        popupContent.style.top = count + 'px';
+                    if (count < 50) {
+                        popupContent.style.top = count*5 + 'px';
                     } else cancelAnimationFrame(animateInterval)
                 } else cancelAnimationFrame(animateInterval);
             };
