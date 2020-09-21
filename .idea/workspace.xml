@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2cd5a8f-2d82-4da4-8a3b-4314bc22b700" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/script/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/script/script.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -33,11 +32,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/script/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-497">
-              <caret line="71" lean-forward="true" selection-start-line="71" selection-end-line="71" />
+            <state relative-caret-position="-670">
+              <caret line="68" column="20" lean-forward="true" selection-start-line="68" selection-start-column="20" selection-end-line="68" selection-end-column="20" />
               <folding>
                 <element signature="e#5104#6136#0" />
-                <marker date="1600696528217" expanded="true" signature="5293:6345" ph="..." />
+                <marker date="1600697876628" expanded="true" signature="5298:6350" ph="..." />
               </folding>
             </state>
           </provider>
@@ -163,22 +162,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1600344615066</updated>
-      <workItem from="1600344616465" duration="84515000" />
+      <workItem from="1600344616465" duration="85973000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84515000" />
+    <option name="totallyTimeSpent" value="85973000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24960254" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.42984015" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.10124334" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -281,11 +281,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/script/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-497">
-          <caret line="71" lean-forward="true" selection-start-line="71" selection-end-line="71" />
+        <state relative-caret-position="-670">
+          <caret line="68" column="20" lean-forward="true" selection-start-line="68" selection-start-column="20" selection-end-line="68" selection-end-column="20" />
           <folding>
             <element signature="e#5104#6136#0" />
-            <marker date="1600696528217" expanded="true" signature="5293:6345" ph="..." />
+            <marker date="1600697876628" expanded="true" signature="5298:6350" ph="..." />
           </folding>
         </state>
       </provider>

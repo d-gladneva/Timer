@@ -64,8 +64,8 @@ window.addEventListener('DOMContentLoaded', () => {
         // menuItems.forEach(elem => elem.addEventListener('click', handlerMenu));
         menu.addEventListener('click', (e) => {
             let target = e.target;
-            if (target.classList.contains('btn-close')) {
-                menu.style.display = 'none';
+            if (target.classList.contains('ul>li')) {
+                menu.classList.toggle('active-menu');
             } else {
                 target = target.closest('.active-menu');
                 console.log(target);
