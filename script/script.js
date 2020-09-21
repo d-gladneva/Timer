@@ -59,24 +59,36 @@ window.addEventListener('DOMContentLoaded', () => {
             menu.classList.toggle('active-menu');
         };
 
-        btnMenu.addEventListener('click', handlerMenu);
-        // closeBtn.addEventListener('click', handlerMenu);
-        // menuItems.forEach(elem => elem.addEventListener('click', handlerMenu));
-        menu.addEventListener('click', (e) => {
-            let target = e.target;
-            if (target.classList.contains('ul>li')) {
-                menu.classList.toggle('active-menu');
-            } else {
-                target = target.closest('.active-menu');
-                console.log(target);
+        // btnMenu.addEventListener('click', handlerMenu);
+        // // closeBtn.addEventListener('click', handlerMenu);
+        // // menuItems.forEach(elem => elem.addEventListener('click', handlerMenu));
+        // menu.addEventListener('click', (e) => {
+        //     let target = e.target;
+        //      if (target.className === 'close-btn'){
+        //          menu.classList.toggle('active-menu');
+        //          console.log(target);
+        //      } else {
+        //         target = target.closest('a');
+        //         console.log(target);
+        //         menu.classList.toggle('active-menu');
+        //     }
+        // });
 
-                if (!target) {
-                    menu.classList.toggle('active-menu');
-                }
+        // усложненное с 1 обработчиком
+
+        body.addEventListener('click', (e) => {
+            let target = e.target;
+            if (target.className === 'active-menu') return;
+            if (target.className === 'close-btn'){
+                menu.classList.toggle('active-menu');
+                console.log(target);
+            } else {
+                target = target.closest('a');
+                console.log(target);
+                menu.classList.toggle('active-menu');
             }
         });
 
-        // body.addEventListener('click', handlerMenu);
 
     };
     toggleMenu();
