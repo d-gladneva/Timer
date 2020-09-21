@@ -76,21 +76,24 @@ window.addEventListener('DOMContentLoaded', () => {
         let animateInterval;
         popupBtn.forEach(elem => elem.addEventListener('click', () => {
             popup.style.display = 'block';
+            let animatePopUp = () => {
+                animateInterval = requestAnimationFrame(animatePopUp);
+                count++;
+                if (document.documentElement.clientWidth > 768){
+                    if (count < 250) {
+                        popupContent.style.top = count + 'px';
+                    } else cancelAnimationFrame(animateInterval)
+                } else cancelAnimationFrame(animateInterval);
+            };
+            animateInterval = requestAnimationFrame(animatePopUp);
         }));
 
         popupClose.forEach(elem => elem.addEventListener('click', () => {
             popup.style.display = 'none';
+            count = 0;
+            popup.style.top = 0;
         }));
-        let animatePopUp = () => {
-            animateInterval = requestAnimationFrame(animatePopUp);
-            count++;
-            if (document.documentElement.clientWidth > 768){
-                if (count < 250) {
-                    popupContent.style.top = count + 'px';
-                } else cancelAnimationFrame(animateInterval)
-            } else cancelAnimationFrame(animateInterval);
-        };
-        animateInterval = requestAnimationFrame(animatePopUp);
+
     };
 
     togglePopUp();
