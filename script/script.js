@@ -51,7 +51,6 @@ window.addEventListener('DOMContentLoaded', () => {
     const menu = document.querySelector('menu');
     const menuItems = menu.querySelectorAll('ul>li');
     const btnScroll = document.querySelector('#btnScroll');
-    console.log(btnScroll);
     const body = document.querySelector('body');
     const toggleMenu = () => {
             const btnMenu = document.querySelector('.menu');
@@ -152,9 +151,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const scrollToTarget = (e) => {
         const targetId = e.target.getAttribute('to');
-        console.log(targetId);
         const target = document.getElementById(targetId.substring(1, targetId.length));
-        console.log(target);
         const targetPosition = getPosition(target);
         const offsetTargetPosition = targetPosition;
 
