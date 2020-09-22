@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2cd5a8f-2d82-4da4-8a3b-4314bc22b700" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/script/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/script/script.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -18,8 +20,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="146">
-              <caret line="110" column="38" selection-start-line="110" selection-start-column="24" selection-end-line="110" selection-end-column="38" />
+            <state relative-caret-position="277">
+              <caret line="192" column="27" lean-forward="true" selection-start-line="192" selection-start-column="27" selection-end-line="192" selection-end-column="27" />
               <folding>
                 <element signature="n#div#0;n#header#0;n#main#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
@@ -32,11 +34,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/script/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="91" column="54" selection-start-line="91" selection-start-column="54" selection-end-line="91" selection-end-column="54" />
+            <state relative-caret-position="-2335">
+              <caret line="69" column="31" selection-start-line="69" selection-start-column="24" selection-end-line="69" selection-end-column="31" />
               <folding>
-                <marker date="1600777936595" expanded="true" signature="2414:3108" ph="..." />
-                <marker date="1600777936595" expanded="true" signature="5137:5600" ph="..." />
+                <element signature="e#346#769#0" />
+                <element signature="e#806#1685#0" />
+                <element signature="e#3190#4655#0" />
+                <element signature="e#5591#5682#0" />
+                <element signature="e#5719#6142#0" />
+                <element signature="e#5437#6465#0" />
+                <marker date="1600800676153" expanded="true" signature="2414:3108" ph="..." />
+                <marker date="1600800676153" expanded="true" signature="4984:5447" ph="..." />
               </folding>
             </state>
           </provider>
@@ -79,6 +87,10 @@
       <find>portfolio</find>
       <find>menu</find>
       <find>service-header</find>
+      <find>portfolio-content</find>
+      <find>portfolio-dots</find>
+      <find>dot</find>
+      <find>console</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -102,10 +114,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-12" />
-    <option name="y" value="-12" />
-    <option name="width" value="1944" />
-    <option name="height" value="1044" />
+    <option name="x" value="261" />
+    <option name="width" value="1401" />
+    <option name="height" value="1002" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -136,7 +147,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/pizza" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ticTacToe" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -168,7 +179,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="119720000" />
+    <option name="totallyTimeSpent" value="131169000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -186,7 +197,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.1669627" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.11900533" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -225,8 +236,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="110" column="38" selection-start-line="110" selection-start-column="24" selection-end-line="110" selection-end-column="38" />
+        <state relative-caret-position="277">
+          <caret line="192" column="27" lean-forward="true" selection-start-line="192" selection-start-column="27" selection-end-line="192" selection-end-column="27" />
           <folding>
             <element signature="n#div#0;n#header#0;n#main#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
@@ -237,11 +248,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/script/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="91" column="54" selection-start-line="91" selection-start-column="54" selection-end-line="91" selection-end-column="54" />
+        <state relative-caret-position="-2335">
+          <caret line="69" column="31" selection-start-line="69" selection-start-column="24" selection-end-line="69" selection-end-column="31" />
           <folding>
-            <marker date="1600777936595" expanded="true" signature="2414:3108" ph="..." />
-            <marker date="1600777936595" expanded="true" signature="5137:5600" ph="..." />
+            <element signature="e#346#769#0" />
+            <element signature="e#806#1685#0" />
+            <element signature="e#3190#4655#0" />
+            <element signature="e#5591#5682#0" />
+            <element signature="e#5719#6142#0" />
+            <element signature="e#5437#6465#0" />
+            <marker date="1600800676153" expanded="true" signature="2414:3108" ph="..." />
+            <marker date="1600800676153" expanded="true" signature="4984:5447" ph="..." />
           </folding>
         </state>
       </provider>
