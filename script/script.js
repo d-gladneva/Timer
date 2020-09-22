@@ -80,18 +80,22 @@ window.addEventListener('DOMContentLoaded', () => {
 
             body.addEventListener('click', (e) => {
                     let target = e.target;
+                    // target = target.closest('.menu');
+                    console.log(target);
 
-                    if(target.classList !== ''){
-                        while (target !== menu) {
+
+
+                    // if(target.classList !== ''){
+                        // while (target !== menu) {
                             if (target.classList.contains('menu')) {
                                 menu.classList.toggle('active-menu');
-                                return;
-                            } else if (target.classList === '' || menu.classList.contains('active-menu') && (!target.classList.contains('active-menu'))){
+                                // return;
+                            } else if (menu.classList.contains('active-menu') && (!target.classList.contains('active-menu'))){
                                 menu.classList.remove('active-menu');
                             }
-                            target = target.parentNode;
-                        }
-                    } else return;
+                            // target = target.parentNode;
+                        // }
+                    // } else return;
 
             });
 
@@ -150,15 +154,20 @@ window.addEventListener('DOMContentLoaded', () => {
     };
 
     const scrollToTarget = (e) => {
-        const targetId = e.target.getAttribute('to');
-        const target = document.getElementById(targetId.substring(1, targetId.length));
-        const targetPosition = getPosition(target);
-        const offsetTargetPosition = targetPosition;
+        let target = e.target;
+        target = target.closest('.test');
+        let targetId = target.getAttribute('to');
+        if (target){
+            const targetTo = document.getElementById(targetId.substring(1, targetId.length));
+            const targetPosition = getPosition(targetTo);
+            const offsetTargetPosition = targetPosition;
 
-        window.scrollTo({
-            top: offsetTargetPosition,
-            behavior: 'smooth'
-        });
+            window.scrollTo({
+                top: offsetTargetPosition,
+                behavior: 'smooth'
+            });
+        }
+
     };
 
     btnScroll.addEventListener('click', scrollToTarget);
