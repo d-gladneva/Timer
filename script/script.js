@@ -50,6 +50,8 @@ window.addEventListener('DOMContentLoaded', () => {
     // меню
     const menu = document.querySelector('menu');
     const menuItems = menu.querySelectorAll('ul>li');
+    const btnScroll = document.querySelector('#btnScroll');
+    console.log(btnScroll);
     const body = document.querySelector('body');
     const toggleMenu = () => {
             const btnMenu = document.querySelector('.menu');
@@ -162,9 +164,15 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     };
 
+    btnScroll.addEventListener('click', scrollToTarget);
+
     for (let i = 0; i < menuItems.length; i++) {
         menuItems[i].addEventListener('click', scrollToTarget);
     }
+
+
+
+
 
 // табы
 
