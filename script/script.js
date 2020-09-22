@@ -52,48 +52,50 @@ window.addEventListener('DOMContentLoaded', () => {
     const menuItems = menu.querySelectorAll('ul>li');
     const body = document.querySelector('body');
     const toggleMenu = () => {
-        const btnMenu = document.querySelector('.menu');
-        const closeBtn = document.querySelector('.close-btn');
-        const activeMenu = document.querySelector('.active-menu');
-        const container = document.querySelector('.container');
-        const handlerMenu = () => {
-            menu.classList.toggle('active-menu');
-        };
+            const btnMenu = document.querySelector('.menu');
+            const closeBtn = document.querySelector('.close-btn');
+            const activeMenu = document.querySelector('.active-menu');
+            const container = document.querySelector('.container');
+            const handlerMenu = () => {
+                menu.classList.toggle('active-menu');
+            };
 
-        // btnMenu.addEventListener('click', handlerMenu);
-        // // closeBtn.addEventListener('click', handlerMenu);
-        // // menuItems.forEach(elem => elem.addEventListener('click', handlerMenu));
-        // menu.addEventListener('click', (e) => {
-        //     let target = e.target;
-        //      if (target.className === 'close-btn'){
-        //          menu.classList.toggle('active-menu');
-        //          console.log(target);
-        //      } else {
-        //         target = target.closest('a');
-        //         console.log(target);
-        //         menu.classList.toggle('active-menu');
-        //     }
-        // });
+            // btnMenu.addEventListener('click', handlerMenu);
+            // // closeBtn.addEventListener('click', handlerMenu);
+            // // menuItems.forEach(elem => elem.addEventListener('click', handlerMenu));
+            // menu.addEventListener('click', (e) => {
+            //     let target = e.target;
+            //      if (target.className === 'close-btn'){
+            //          menu.classList.toggle('active-menu');
+            //          console.log(target);
+            //      } else {
+            //         target = target.closest('a');
+            //         console.log(target);
+            //         menu.classList.toggle('active-menu');
+            //     }
+            // });
 
-        // усложненное с 1 обработчиком
+            // усложненное с 1 обработчиком
 
-        body.addEventListener('click', (e) => {
-                let target = e.target;
-                console.log(target);
-                if (target.classList.contains('menu')|| target.classList.contains('close-btn')) {
-                    menu.classList.toggle('active-menu');
+            body.addEventListener('click', (e) => {
+                    let target = e.target;
                     console.log(target);
-                } else if (menu.classList.contains('active-menu')&&(target.className !== 'active-menu')) {
-                    menu.classList.remove('active-menu');
-                }
-            }
-        );
+                    while (target !== menu) {
+                        if (target.classList.contains('menu')) {
+                            menu.classList.toggle('active-menu');
+                            console.log(target);
+                            return;
+                        } else if (menu.classList.contains('active-menu') && (!target.classList.contains('active-menu'))){
+                            menu.classList.remove('active-menu');
+                        }
+                        target = target.parentNode;
+                    }
+            });
 
-
-    };
+        };
     toggleMenu();
 
-    // popup
+// popup
 
     const togglePopUp = () => {
         const popup = document.querySelector('.popup');
@@ -138,7 +140,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     togglePopUp();
 
-    // scroll
+// scroll
 
     const getPosition = (elem) => {
         return document.documentElement.scrollTop + elem.getBoundingClientRect().y;
@@ -162,7 +164,7 @@ window.addEventListener('DOMContentLoaded', () => {
         menuItems[i].addEventListener('click', scrollToTarget);
     }
 
-    // табы
+// табы
 
     const tabs = () => {
         const tabHeader = document.querySelector('.service-header');

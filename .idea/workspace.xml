@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2cd5a8f-2d82-4da4-8a3b-4314bc22b700" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/script/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/script/script.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -18,8 +19,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1210">
-              <caret line="110" column="20" selection-start-line="110" selection-start-column="20" selection-end-line="110" selection-end-column="20" />
+            <state relative-caret-position="146">
+              <caret line="110" column="38" selection-start-line="110" selection-start-column="24" selection-end-line="110" selection-end-column="38" />
               <folding>
                 <element signature="n#div#0;n#header#0;n#main#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
@@ -32,11 +33,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/script/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="90" column="18" lean-forward="true" selection-start-line="90" selection-start-column="18" selection-end-line="90" selection-end-column="18" />
+            <state relative-caret-position="3417">
+              <caret line="201" column="3" lean-forward="true" selection-start-line="201" selection-start-column="3" selection-end-line="201" selection-end-column="3" />
               <folding>
-                <marker date="1600765339481" expanded="true" signature="2382:3024" ph="..." />
-                <marker date="1600765339481" expanded="true" signature="5050:5513" ph="..." />
+                <marker date="1600768026824" expanded="true" signature="2414:3108" ph="..." />
+                <marker date="1600768026824" expanded="true" signature="4925:5388" ph="..." />
               </folding>
             </state>
           </provider>
@@ -78,6 +79,7 @@
       <find>#portfolio</find>
       <find>portfolio</find>
       <find>menu</find>
+      <find>service-header</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -167,11 +169,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109102000" />
+    <option name="totallyTimeSpent" value="111788000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24960254" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -185,7 +186,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.053285968" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.6181172" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -224,8 +225,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1210">
-          <caret line="110" column="20" selection-start-line="110" selection-start-column="20" selection-end-line="110" selection-end-column="20" />
+        <state relative-caret-position="146">
+          <caret line="110" column="38" selection-start-line="110" selection-start-column="24" selection-end-line="110" selection-end-column="38" />
           <folding>
             <element signature="n#div#0;n#header#0;n#main#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
@@ -236,11 +237,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/script/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="90" column="18" lean-forward="true" selection-start-line="90" selection-start-column="18" selection-end-line="90" selection-end-column="18" />
+        <state relative-caret-position="3417">
+          <caret line="201" column="3" lean-forward="true" selection-start-line="201" selection-start-column="3" selection-end-line="201" selection-end-column="3" />
           <folding>
-            <marker date="1600765339481" expanded="true" signature="2382:3024" ph="..." />
-            <marker date="1600765339481" expanded="true" signature="5050:5513" ph="..." />
+            <marker date="1600768026824" expanded="true" signature="2414:3108" ph="..." />
+            <marker date="1600768026824" expanded="true" signature="4925:5388" ph="..." />
           </folding>
         </state>
       </provider>
