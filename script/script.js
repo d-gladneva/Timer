@@ -55,6 +55,7 @@ window.addEventListener('DOMContentLoaded', () => {
         const btnMenu = document.querySelector('.menu');
         const closeBtn = document.querySelector('.close-btn');
         const activeMenu = document.querySelector('.active-menu');
+        const container = document.querySelector('.container');
         const handlerMenu = () => {
             menu.classList.toggle('active-menu');
         };
@@ -77,17 +78,16 @@ window.addEventListener('DOMContentLoaded', () => {
         // усложненное с 1 обработчиком
 
         body.addEventListener('click', (e) => {
-            let target = e.target;
-            if (target.className === 'active-menu') return;
-            if (target.className === 'close-btn'){
-                menu.classList.toggle('active-menu');
+                let target = e.target;
                 console.log(target);
-            } else {
-                target = target.closest('a');
-                console.log(target);
-                menu.classList.toggle('active-menu');
+                if (target.classList.contains('menu')|| target.classList.contains('close-btn')) {
+                    menu.classList.toggle('active-menu');
+                    console.log(target);
+                } else if (menu.classList.contains('active-menu')&&(target.className !== 'active-menu')) {
+                    menu.classList.remove('active-menu');
+                }
             }
-        });
+        );
 
 
     };
