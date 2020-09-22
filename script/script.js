@@ -80,16 +80,21 @@ window.addEventListener('DOMContentLoaded', () => {
             body.addEventListener('click', (e) => {
                     let target = e.target;
                     console.log(target);
-                    while (target !== menu) {
-                        if (target.classList.contains('menu')) {
-                            menu.classList.toggle('active-menu');
-                            console.log(target);
-                            return;
-                        } else if (menu.classList.contains('active-menu') && (!target.classList.contains('active-menu'))){
-                            menu.classList.remove('active-menu');
+
+                    if(target.classList !== ''){
+                        console.log(target.attributes);
+                        while (target !== menu) {
+                            if (target.classList.contains('menu')) {
+                                menu.classList.toggle('active-menu');
+                                console.log(target);
+                                return;
+                            } else if (target.classList === '' || menu.classList.contains('active-menu') && (!target.classList.contains('active-menu'))){
+                                menu.classList.remove('active-menu');
+                            }
+                            target = target.parentNode;
                         }
-                        target = target.parentNode;
-                    }
+                    } else return;
+
             });
 
         };
