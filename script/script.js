@@ -53,53 +53,42 @@ window.addEventListener('DOMContentLoaded', () => {
     const btnScroll = document.querySelector('#btnScroll');
     const body = document.querySelector('body');
     const toggleMenu = () => {
-            const btnMenu = document.querySelector('.menu');
-            const closeBtn = document.querySelector('.close-btn');
-            const activeMenu = document.querySelector('.active-menu');
-            const container = document.querySelector('.container');
-            const handlerMenu = () => {
-                menu.classList.toggle('active-menu');
-            };
-
-            // btnMenu.addEventListener('click', handlerMenu);
-            // // closeBtn.addEventListener('click', handlerMenu);
-            // // menuItems.forEach(elem => elem.addEventListener('click', handlerMenu));
-            // menu.addEventListener('click', (e) => {
-            //     let target = e.target;
-            //      if (target.className === 'close-btn'){
-            //          menu.classList.toggle('active-menu');
-            //          console.log(target);
-            //      } else {
-            //         target = target.closest('a');
-            //         console.log(target);
-            //         menu.classList.toggle('active-menu');
-            //     }
-            // });
-
-            // усложненное с 1 обработчиком
-
-            body.addEventListener('click', (e) => {
-                    let target = e.target;
-                    // target = target.closest('.menu');
-                    console.log(target);
-
-
-
-                    // if(target.classList !== ''){
-                        // while (target !== menu) {
-                            if (target.classList.contains('menu')) {
-                                menu.classList.toggle('active-menu');
-                                // return;
-                            } else if (menu.classList.contains('active-menu') && (!target.classList.contains('active-menu'))){
-                                menu.classList.remove('active-menu');
-                            }
-                            // target = target.parentNode;
-                        // }
-                    // } else return;
-
-            });
-
+        const btnMenu = document.querySelector('.menu');
+        const closeBtn = document.querySelector('.close-btn');
+        const activeMenu = document.querySelector('.active-menu');
+        const container = document.querySelector('.container');
+        const handlerMenu = () => {
+            menu.classList.toggle('active-menu');
         };
+
+        // btnMenu.addEventListener('click', handlerMenu);
+        // // closeBtn.addEventListener('click', handlerMenu);
+        // // menuItems.forEach(elem => elem.addEventListener('click', handlerMenu));
+        // menu.addEventListener('click', (e) => {
+        //     let target = e.target;
+        //      if (target.className === 'close-btn'){
+        //          menu.classList.toggle('active-menu');
+        //          console.log(target);
+        //      } else {
+        //         target = target.closest('a');
+        //         console.log(target);
+        //         menu.classList.toggle('active-menu');
+        //     }
+        // });
+
+        // усложненное с 1 обработчиком
+
+        body.addEventListener('click', (e) => {
+            let target = e.target;
+            target = target.closest('.menu');
+            if (target) {
+                menu.classList.toggle('active-menu');
+            } else if ((!target) && menu.classList.contains('active-menu')) {
+                menu.classList.remove('active-menu');
+            }
+        });
+
+    };
     toggleMenu();
 
 // popup
@@ -157,7 +146,7 @@ window.addEventListener('DOMContentLoaded', () => {
         let target = e.target;
         target = target.closest('.test');
         let targetId = target.getAttribute('to');
-        if (target){
+        if (target) {
             const targetTo = document.getElementById(targetId.substring(1, targetId.length));
             const targetPosition = getPosition(targetTo);
             const offsetTargetPosition = targetPosition;
@@ -175,9 +164,6 @@ window.addEventListener('DOMContentLoaded', () => {
     for (let i = 0; i < menuItems.length; i++) {
         menuItems[i].addEventListener('click', scrollToTarget);
     }
-
-
-
 
 
 // табы
@@ -226,7 +212,7 @@ window.addEventListener('DOMContentLoaded', () => {
         return li.repeat(q);
     };
 
-    portfolioDots.insertAdjacentHTML('beforeEnd',renderDots(slide.length));
+    portfolioDots.insertAdjacentHTML('beforeEnd', renderDots(slide.length));
 
     //слайдер
 
@@ -254,7 +240,7 @@ window.addEventListener('DOMContentLoaded', () => {
             prevSlide(slide, currentSlide, 'portfolio-item-active');
             prevSlide(dot, currentSlide, 'dot-active');
             currentSlide++;
-            if (currentSlide >= slide.length){
+            if (currentSlide >= slide.length) {
                 currentSlide = 0;
             }
             nextSlide(slide, currentSlide, 'portfolio-item-active');
@@ -274,31 +260,31 @@ window.addEventListener('DOMContentLoaded', () => {
 
             let target = e.target;
 
-            if (!target.matches('.portfolio-btn, .dot')){
+            if (!target.matches('.portfolio-btn, .dot')) {
                 return;
             }
 
             prevSlide(slide, currentSlide, 'portfolio-item-active');
             prevSlide(dot, currentSlide, 'dot-active');
 
-            if (target.matches('#arrow-right')){
+            if (target.matches('#arrow-right')) {
                 currentSlide++;
-            } else if (target.matches('#arrow-left')){
+            } else if (target.matches('#arrow-left')) {
                 currentSlide--;
-            } else if (target.matches('.dot')){
+            } else if (target.matches('.dot')) {
                 dot.forEach((elem, index) => {
-                    if (elem === target){
+                    if (elem === target) {
                         currentSlide = index;
                     }
                 });
             }
 
-            if (currentSlide >= slide.length){
+            if (currentSlide >= slide.length) {
                 currentSlide = 0;
             }
 
-            if (currentSlide < 0){
-                currentSlide = slide.length-1;
+            if (currentSlide < 0) {
+                currentSlide = slide.length - 1;
             }
 
             nextSlide(slide, currentSlide, 'portfolio-item-active');
@@ -307,14 +293,14 @@ window.addEventListener('DOMContentLoaded', () => {
 
         slider.addEventListener('mouseover', (e) => {
             let target = e.target;
-            if (target.matches('.portfolio-btn')||target.matches('.dot')){
+            if (target.matches('.portfolio-btn') || target.matches('.dot')) {
                 stopSlide();
             }
         });
 
         slider.addEventListener('mouseout', (e) => {
             let target = e.target;
-            if (target.matches('.portfolio-btn')||target.matches('.dot')){
+            if (target.matches('.portfolio-btn') || target.matches('.dot')) {
                 startSlide();
             }
         });
