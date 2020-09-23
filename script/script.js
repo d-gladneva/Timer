@@ -108,12 +108,10 @@ window.addEventListener('DOMContentLoaded', () => {
         let count = 0;
         let animateInterval;
         popupBtn.forEach(elem => elem.addEventListener('click', () => {
+            animateInterval = requestAnimationFrame(animatePopUp);
+            count = 0;
             popup.style.display = 'block';
         }));
-
-        // popupClose.addEventListener('click', () => {
-        //     popup.style.display = 'none';
-        // });
 
         popup.addEventListener('click', (e) => {
             let target = e.target;
@@ -124,8 +122,6 @@ window.addEventListener('DOMContentLoaded', () => {
                 popup.style.top = '0';
             } else {
                 target = target.closest('.popup-content');
-                count = 0;
-                popup.style.top = '0';
 
                 if (!target) {
                     popup.style.display = 'none';
@@ -138,8 +134,8 @@ window.addEventListener('DOMContentLoaded', () => {
             animateInterval = requestAnimationFrame(animatePopUp);
             count++;
             if (document.documentElement.clientWidth > 768) {
-                if (count < 250) {
-                    popupContent.style.top = count + 'px';
+                if (count < 50) {
+                    popupContent.style.top = count*5 + 'px';
                 } else cancelAnimationFrame(animateInterval)
             } else cancelAnimationFrame(animateInterval);
         };
