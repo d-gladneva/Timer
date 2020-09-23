@@ -82,9 +82,7 @@ window.addEventListener('DOMContentLoaded', () => {
             let target = e.target;
             if (!menu.classList.contains('active-menu')){
                 target = target.closest('.menu');
-                console.log(target);
                 if (target) {
-                    console.log(target);
                     menu.classList.toggle('active-menu');
                 }
             } else if (menu.classList.contains('active-menu')) {
@@ -122,12 +120,17 @@ window.addEventListener('DOMContentLoaded', () => {
 
             if (target.className === 'popup-close') {
                 popup.style.display = 'none';
+                count = 0;
+                popup.style.top = '0';
             } else {
                 target = target.closest('.popup-content');
-                console.log(target);
+                count = 0;
+                popup.style.top = '0';
 
                 if (!target) {
                     popup.style.display = 'none';
+                    count = 0;
+                    popup.style.top = '0';
                 }
             }
         });
@@ -141,6 +144,11 @@ window.addEventListener('DOMContentLoaded', () => {
             } else cancelAnimationFrame(animateInterval);
         };
         animateInterval = requestAnimationFrame(animatePopUp);
+
+        // popupClose.forEach(elem => elem.addEventListener('click', () => {
+        //     popup.style.display = 'none';
+        //
+        // }));
     };
 
     togglePopUp();
