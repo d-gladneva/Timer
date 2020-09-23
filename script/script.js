@@ -61,41 +61,41 @@ window.addEventListener('DOMContentLoaded', () => {
             menu.classList.toggle('active-menu');
         };
 
-        btnMenu.addEventListener('click', handlerMenu);
-        // closeBtn.addEventListener('click', handlerMenu);
-        // menuItems.forEach(elem => elem.addEventListener('click', handlerMenu));
-        menu.addEventListener('click', (e) => {
-            let target = e.target;
-             if (target.className === 'close-btn'){
-                 menu.classList.toggle('active-menu');
-                 console.log(target);
-             } else {
-                target = target.closest('a');
-                console.log(target);
-                menu.classList.toggle('active-menu');
-            }
-        });
+        // btnMenu.addEventListener('click', handlerMenu);
+        // // closeBtn.addEventListener('click', handlerMenu);
+        // // menuItems.forEach(elem => elem.addEventListener('click', handlerMenu));
+        // menu.addEventListener('click', (e) => {
+        //     let target = e.target;
+        //      if (target.className === 'close-btn'){
+        //          menu.classList.toggle('active-menu');
+        //          console.log(target);
+        //      } else {
+        //         target = target.closest('a');
+        //         console.log(target);
+        //         menu.classList.toggle('active-menu');
+        //     }
+        // });
 
         // усложненное с 1 обработчиком
 
-        // body.addEventListener('click', (e) => {
-        //     let target = e.target;
-        //     target = target.closest('.menu');
-        //     console.log(target);
-        //     if (target) {
-        //         console.log(target);
-        //         menu.classList.toggle('active-menu');
-        //     } else if (!target){
-        //         target = e.target;
-        //         console.log(target);
-        //         if (menu.classList.contains('close-btn')) {
-        //             console.log(target);
-        //             menu.classList.remove('active-menu');
-        //         }
-        //     }
-        //
-        //
-        // });
+        body.addEventListener('click', (e) => {
+            let target = e.target;
+            if (!menu.classList.contains('active-menu')){
+                target = target.closest('.menu');
+                console.log(target);
+                if (target) {
+                    console.log(target);
+                    menu.classList.toggle('active-menu');
+                }
+            } else if (menu.classList.contains('active-menu')) {
+                if (!target.classList.contains('active-menu')) {
+                    menu.classList.remove('active-menu');
+                } else
+                if (target.classList.contains('close-btn'))
+                menu.classList.remove('active-menu');
+            }
+
+        });
 
     };
     toggleMenu();
