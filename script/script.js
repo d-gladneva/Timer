@@ -1,20 +1,15 @@
 window.addEventListener('DOMContentLoaded', () => {
 
-    let isNumber = function (n) {
-        return !isNaN(parseFloat(n)) && isFinite(n);
-    };
-
     // проверка на валидацию
 
     const calcBlock = document.querySelector('.calc-block');
-    console.log(calcBlock);
     const inputElems = calcBlock.querySelectorAll('input[type="text"]');
-    console.log(inputElems);
 
     const checkValidInput = () => {
         for (let i = 0; i < inputElems.length; i++) {
-            if (!(inputElems[i].value&&isNumber(inputElems[i].value)))
-            inputElems[i].value = '';
+           if(!inputElems[i].value.match(/[0-9]/)){
+               inputElems[i].value = '';
+           }
         }
     };
 
@@ -27,16 +22,20 @@ window.addEventListener('DOMContentLoaded', () => {
 
     command.addEventListener('mouseover', (e) => {
         let target = e.target;
-        let dataSrcValue = target.getAttribute('src');
-        target.src = target.dataset.img;
-        target.setAttribute('data-img', dataSrcValue);
+        if (target.classList.contains('command__photo')){
+            let dataSrcValue = target.getAttribute('src');
+            target.src = target.dataset.img;
+            target.setAttribute('data-img', dataSrcValue);
+        }
     });
 
     command.addEventListener('mouseout', (e) => {
         let target = e.target;
-        let dataSrcValue = target.getAttribute('src');
-        target.src = target.dataset.img;
-        target.setAttribute('data-img', dataSrcValue);
+        if (target.classList.contains('command__photo')){
+            let dataSrcValue = target.getAttribute('src');
+            target.src = target.dataset.img;
+            target.setAttribute('data-img', dataSrcValue);
+        }
     });
 
 
