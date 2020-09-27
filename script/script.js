@@ -7,9 +7,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const checkValidInput = () => {
         for (let i = 0; i < inputElems.length; i++) {
-           if(!inputElems[i].value.match(/[0-9]/)){
-               inputElems[i].value = '';
-           }
+            inputElems[i].value = inputElems[i].value.replace(/\D/g, '');
         }
     };
 
@@ -22,7 +20,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     command.addEventListener('mouseover', (e) => {
         let target = e.target;
-        if (target.classList.contains('command__photo')){
+        if (target.classList.contains('command__photo')) {
             let dataSrcValue = target.getAttribute('src');
             target.src = target.dataset.img;
             target.setAttribute('data-img', dataSrcValue);
@@ -31,7 +29,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     command.addEventListener('mouseout', (e) => {
         let target = e.target;
-        if (target.classList.contains('command__photo')){
+        if (target.classList.contains('command__photo')) {
             let dataSrcValue = target.getAttribute('src');
             target.src = target.dataset.img;
             target.setAttribute('data-img', dataSrcValue);
@@ -120,7 +118,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
         body.addEventListener('click', (e) => {
             let target = e.target;
-            if (!menu.classList.contains('active-menu')){
+            if (!menu.classList.contains('active-menu')) {
                 target = target.closest('.menu');
                 if (target) {
                     menu.classList.toggle('active-menu');
@@ -128,9 +126,8 @@ window.addEventListener('DOMContentLoaded', () => {
             } else if (menu.classList.contains('active-menu')) {
                 if (!target.classList.contains('active-menu')) {
                     menu.classList.remove('active-menu');
-                } else
-                if (target.classList.contains('close-btn'))
-                menu.classList.remove('active-menu');
+                } else if (target.classList.contains('close-btn'))
+                    menu.classList.remove('active-menu');
             }
 
         });
@@ -175,7 +172,7 @@ window.addEventListener('DOMContentLoaded', () => {
             count++;
             if (document.documentElement.clientWidth > 768) {
                 if (count < 50) {
-                    popupContent.style.top = count*5 + 'px';
+                    popupContent.style.top = count * 5 + 'px';
                 } else cancelAnimationFrame(animateInterval)
             } else cancelAnimationFrame(animateInterval);
         };
