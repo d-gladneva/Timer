@@ -49,16 +49,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/script/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="325">
+              <caret line="412" column="55" selection-start-line="412" selection-start-column="55" selection-end-line="412" selection-end-column="55" />
               <folding>
-                <element signature="e#346#769#0" />
-                <element signature="e#806#1685#0" />
                 <element signature="e#3921#5386#0" />
                 <element signature="e#5454#5545#0" />
                 <element signature="e#6293#7321#0" />
-                <marker date="1601201093197" expanded="true" signature="322:422" ph="..." />
-                <marker date="1601201093197" expanded="true" signature="6640:6777" ph="..." />
+                <marker date="1601312000889" expanded="true" signature="6517:6654" ph="..." />
               </folding>
             </state>
           </provider>
@@ -180,7 +177,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="158602000" />
+    <option name="totallyTimeSpent" value="179470000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -198,7 +195,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.053285968" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.055062167" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -247,16 +244,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/script/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="325">
+          <caret line="412" column="55" selection-start-line="412" selection-start-column="55" selection-end-line="412" selection-end-column="55" />
           <folding>
-            <element signature="e#346#769#0" />
-            <element signature="e#806#1685#0" />
             <element signature="e#3921#5386#0" />
             <element signature="e#5454#5545#0" />
             <element signature="e#6293#7321#0" />
-            <marker date="1601201093197" expanded="true" signature="322:422" ph="..." />
-            <marker date="1601201093197" expanded="true" signature="6640:6777" ph="..." />
+            <marker date="1601312000889" expanded="true" signature="6517:6654" ph="..." />
           </folding>
         </state>
       </provider>
