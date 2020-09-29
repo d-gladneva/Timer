@@ -368,6 +368,7 @@ window.addEventListener('DOMContentLoaded', () => {
         const calcDay = document.querySelector('.calc-day');
         const calcCount = document.querySelector('.calc-count');
         const totalValue = document.getElementById('total');
+        calcSquare.setAttribute("required", "");
 
         const countSum = () => {
             let total = 0;
@@ -399,7 +400,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 let interval = setInterval(()=> {
                     if (count < val) {
                         count = count + 1;
-                        if (calcSquare.value !== '' || calcDay.value !== '' || calcCount.value !== ''){
+                        if (calcSquare.value !== '' && calcDay.value !== '' && calcCount.value !== ''){
                             clearInterval(interval);
                             totalValue.textContent = total;
                         } else {
