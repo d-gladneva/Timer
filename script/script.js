@@ -392,29 +392,36 @@ window.addEventListener('DOMContentLoaded', () => {
                 total = +Math.round(price * typeValue * squareValue * countValue * dayValue);
             }
 
-            totalValue.textContent = total;
+            console.log(typeof total);
 
+            totalValue.textContent = total;
+            let interval;
             const runNumbers = (val, timeout) => {
                 let count = 0;
+                count++;
+                // let interval = setInterval(()=> {
+                    if (count < 100) {
+                        interval = requestAnimationFrame(runNumbers);
 
-                let interval = setInterval(()=> {
-                    if (count < val) {
-                        count = count + 1;
                         if (calcSquare.value !== '' && calcDay.value !== '' && calcCount.value !== ''){
-                            clearInterval(interval);
+
                             totalValue.textContent = total;
-                        } else {
-                            totalValue.textContent = count;
+                            cancelAnimationFrame(interval);
+                        } else if(calcSquare.value === '' || calcDay.value === '' && calcCount.value === ''){
+                                totalValue.textContent = +count;
                         }
                     } else {
                         count = 0;
                         count = count + 1;
                         totalValue.textContent = count;
-                    }}, timeout)
+                    }
+                    // }, timeout)
 
             };
 
-            runNumbers(100, 40);
+            interval = requestAnimationFrame(runNumbers);
+
+            // runNumbers(100, 40);
 
         };
 
