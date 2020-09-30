@@ -1,4 +1,25 @@
 window.addEventListener('DOMContentLoaded', () => {
+    // анимация
+    const animate = ({ timing, draw, duration }) => {
+        const start = performance.now();
+
+        requestAnimationFrame( function newAnimate (time) {
+            // timeFraction изменяется от 0 до 1
+            let timeFraction = (time - start) / duration;
+            if (timeFraction > 1) {
+                timeFraction = 1;
+            }
+
+            // вычисление текущего состояния анимации
+            const progress = timing(timeFraction);
+
+            draw(progress); // отрисовать её
+
+            if (timeFraction < 1) {
+                requestAnimationFrame(newAnimate);
+            }
+        });
+    };
 
     // проверка на валидацию
 
@@ -372,7 +393,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
         const countSum = () => {
             let total = 0;
-            console.log(typeof total);
             let countValue = 1;
             let dayValue = 1;
             const typeValue = calcType.options[calcType.selectedIndex].value;
@@ -392,48 +412,23 @@ window.addEventListener('DOMContentLoaded', () => {
                 total = +Math.round(price * typeValue * squareValue * countValue * dayValue);
             }
 
-            console.log(typeof total);
-
-            totalValue.textContent = total;
-            let interval;
-            const runNumbers = (val, timeout) => {
-                let count = 0;
-                count++;
-                // let interval = setInterval(()=> {
-                    if (count < 100) {
-                        interval = requestAnimationFrame(runNumbers);
-
-                        if (calcSquare.value !== '' && calcDay.value !== '' && calcCount.value !== ''){
-
-                            totalValue.textContent = total;
-                            cancelAnimationFrame(interval);
-                        } else if(calcSquare.value === '' || calcDay.value === '' && calcCount.value === ''){
-                                totalValue.textContent = +count;
-                        }
-                    } else {
-                        count = 0;
-                        count = count + 1;
-                        totalValue.textContent = count;
-                    }
-                    // }, timeout)
-
-            };
-
-            interval = requestAnimationFrame(runNumbers);
-
-            // runNumbers(100, 40);
+            animate({
+                duration: 300,
+                timing(timeFraction) {
+                    return timeFraction;
+                },
+                draw(progress) {
+                    totalValue.textContent = Math.floor(progress * total);
+                }
+            });
 
         };
-
-
-
         calcBlock.addEventListener('change', (e) => {
             const target = e.target;
             if (target.matches('select') || target.matches('input')) {
                 countSum();
             }
         });
-
 
     };
 
