@@ -25,6 +25,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const calcBlock = document.querySelector('.calc-block');
     const inputElems = calcBlock.querySelectorAll('input[type="text"]');
+    const inputPhones = document.querySelectorAll('input[name="user_phone"]');
+    const inputNames = document.querySelectorAll('input[name="user_name"]');
+    const inputMessages = document.querySelectorAll('input[name="user_message"]');
+    console.log(inputPhones);
 
     const checkValidInput = () => {
         for (let i = 0; i < inputElems.length; i++) {
@@ -32,6 +36,27 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    const checkValidInputPhones = () => {
+        for (let i = 0; i < inputElems.length; i++) {
+            inputPhones[i].value = inputPhones[i].value.replace(/[^0-9+]/, '');
+        }
+    };
+
+    const checkValidInputNames = () => {
+        for (let i = 0; i < inputNames.length; i++) {
+            inputNames[i].value = inputNames[i].value.replace(/[^а-яё\s]/ig, '');
+        }
+    };
+
+    const checkValidInputMessages = () => {
+        for (let i = 0; i < inputMessages.length; i++) {
+            inputMessages[i].value = inputMessages[i].value.replace(/[^а-яё\s]/ig, '');
+        }
+    };
+
+    document.addEventListener('input', checkValidInputPhones);
+    document.addEventListener('input', checkValidInputNames);
+    document.addEventListener('input', checkValidInputMessages);
     calcBlock.addEventListener('input', checkValidInput);
 
     // смена картинок
@@ -103,7 +128,7 @@ window.addEventListener('DOMContentLoaded', () => {
         upDateClock();
     };
 
-    countTimer('01 october 2020');
+    countTimer('31 december 2020');
     // let calcDate = setInterval(countTimer, 1000, '01 october 2020');
 
     // меню
@@ -389,7 +414,7 @@ window.addEventListener('DOMContentLoaded', () => {
         const calcDay = document.querySelector('.calc-day');
         const calcCount = document.querySelector('.calc-count');
         const totalValue = document.getElementById('total');
-        calcSquare.setAttribute("required", "");
+        // calcSquare.setAttribute("required", "");
 
         const countSum = () => {
             let total = 0;
@@ -434,4 +459,66 @@ window.addEventListener('DOMContentLoaded', () => {
 
     calc(100);
 
+    // send-ajax form
+
+    const form1 = document.getElementById('form1');
+    const form2 = document.getElementById('form2');
+    const form3 = document.getElementById('form3');
+
+    const sendForm = () => {
+        const errorMessage = 'Что-то пошло не так...';
+        const loadMessage = 'Загрузка...';
+        const succesMessage = 'Спасибо! Мы скоро с Вами свяжемся!';
+        const statusMessage = document.createElement('div');
+        statusMessage.style.cssText = 'font-size: 2rem';
+
+        document.addEventListener('submit', (e) => {
+            e.preventDefault();
+            let target = e.target;
+            console.log(target);
+            const inputFormElems = target.querySelectorAll('input');
+            console.log(inputFormElems);
+            console.log(target.id);
+                target.appendChild(statusMessage);
+                statusMessage.textContent = loadMessage;
+                const formData = new FormData(target);
+                let body = {};
+                formData.forEach((val, key) => {
+                    body[key]=val;
+                });
+                postData(body, () => {
+                    statusMessage.textContent = succesMessage;
+                    for (let i=0; i<inputFormElems.length; i++){
+                        inputFormElems[i].value='';
+                    }
+
+                }, (error) => {
+                    statusMessage.textContent = errorMessage;
+                    console.log(error);
+                });
+        });
+
+        const postData = (body, outputData, errorData) => {
+            const request = new XMLHttpRequest();
+
+            request.addEventListener('readystatechange', () => {
+                if (request.readyState !== 4){
+                    return;
+                }
+                if (request.status === 200){
+
+                    outputData();
+                } else {
+                    errorData(request.status);
+                }
+            });
+
+            request.open('POST', './server.php');
+            request.setRequestHeader('Content-Type', 'application/json');
+            console.log(body);
+            request.send(JSON.stringify(body));
+        }
+    };
+
+    sendForm();
 });
