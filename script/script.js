@@ -470,7 +470,7 @@ window.addEventListener('DOMContentLoaded', () => {
         const loadMessage = 'Загрузка...';
         const succesMessage = 'Спасибо! Мы скоро с Вами свяжемся!';
         const statusMessage = document.createElement('div');
-        statusMessage.style.cssText = 'font-size: 2rem';
+        statusMessage.style.cssText = 'font-size: 2rem; color: #fff';
 
         const sendAllForms = (e) => {
             e.preventDefault();
