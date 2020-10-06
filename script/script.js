@@ -1,9 +1,9 @@
 window.addEventListener('DOMContentLoaded', () => {
     // анимация
-    const animate = ({ timing, draw, duration }) => {
+    const animate = ({timing, draw, duration}) => {
         const start = performance.now();
 
-        requestAnimationFrame( function newAnimate (time) {
+        requestAnimationFrame(function newAnimate(time) {
             // timeFraction изменяется от 0 до 1
             let timeFraction = (time - start) / duration;
             if (timeFraction > 1) {
@@ -472,40 +472,42 @@ window.addEventListener('DOMContentLoaded', () => {
         const statusMessage = document.createElement('div');
         statusMessage.style.cssText = 'font-size: 2rem';
 
-        document.addEventListener('submit', (e) => {
+        const sendAllForms = (e) => {
             e.preventDefault();
             let target = e.target;
             console.log(target);
             const inputFormElems = target.querySelectorAll('input');
             console.log(inputFormElems);
             console.log(target.id);
-                target.appendChild(statusMessage);
-                statusMessage.textContent = loadMessage;
-                const formData = new FormData(target);
-                let body = {};
-                formData.forEach((val, key) => {
-                    body[key]=val;
-                });
-                postData(body, () => {
-                    statusMessage.textContent = succesMessage;
-                    for (let i=0; i<inputFormElems.length; i++){
-                        inputFormElems[i].value='';
-                    }
+            target.appendChild(statusMessage);
+            statusMessage.textContent = loadMessage;
+            const formData = new FormData(target);
+            let body = {};
+            formData.forEach((val, key) => {
+                body[key] = val;
+            });
+            postData(body, () => {
+                statusMessage.textContent = succesMessage;
+                for (let i = 0; i < inputFormElems.length; i++) {
+                    inputFormElems[i].value = '';
+                }
 
-                }, (error) => {
-                    statusMessage.textContent = errorMessage;
-                    console.log(error);
-                });
-        });
+            }, (error) => {
+                statusMessage.textContent = errorMessage;
+                console.log(error);
+            });
+        };
+
+        document.addEventListener('submit', sendAllForms);
 
         const postData = (body, outputData, errorData) => {
             const request = new XMLHttpRequest();
 
             request.addEventListener('readystatechange', () => {
-                if (request.readyState !== 4){
+                if (request.readyState !== 4) {
                     return;
                 }
-                if (request.status === 200){
+                if (request.status === 200) {
 
                     outputData();
                 } else {
