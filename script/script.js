@@ -25,38 +25,46 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const calcBlock = document.querySelector('.calc-block');
     const inputElems = calcBlock.querySelectorAll('input[type="text"]');
-    const inputPhones = document.querySelectorAll('input[name="user_phone"]');
-    const inputNames = document.querySelectorAll('input[name="user_name"]');
-    const inputMessages = document.querySelectorAll('input[name="user_message"]');
-    console.log(inputPhones);
+    // const inputMails = document.querySelectorAll('input[name="user_mail"]');
+    // const inputPhones = document.querySelectorAll('input[name="user_phone"]');
+    // const inputNames = document.querySelectorAll('input[name="user_name"]');
+    // const inputMessages = document.querySelectorAll('input[name="user_message"]');
+    // console.log(inputPhones);
+
 
     const checkValidInput = () => {
         for (let i = 0; i < inputElems.length; i++) {
             inputElems[i].value = inputElems[i].value.replace(/\D/g, '');
         }
     };
+    //
+    // const checkValidInputMales = () => {
+    //     for (let i = 0; i < inputMails.length; i++) {
+    //         // inputMails[i].value = inputMails[i].value.replace(/\D/g, '');
+    //         if (inputMails[i].value !== /^\+?[78]([-()]*\d){10}$/) {
+    //             alert('Введите верное значение!');
+    //             inputMails[i].value = inputMails[i].value.replace(/\D/g, '');
+    //         }
+    //
+    //     }
+    // };
+    //
+    // const checkValidInputNames = () => {
+    //     for (let i = 0; i < inputNames.length; i++) {
+    //         inputNames[i].value = inputNames[i].value.replace(/[^а-яё\s]/ig, '');
+    //     }
+    // };
+    //
+    // const checkValidInputMessages = () => {
+    //     for (let i = 0; i < inputMessages.length; i++) {
+    //         inputMessages[i].value = inputMessages[i].value.replace(/[^а-яё\s]/ig, '');
+    //     }
+    // };
 
-    const checkValidInputPhones = () => {
-        for (let i = 0; i < inputElems.length; i++) {
-            inputPhones[i].value = inputPhones[i].value.replace(/[^0-9+]/, '');
-        }
-    };
-
-    const checkValidInputNames = () => {
-        for (let i = 0; i < inputNames.length; i++) {
-            inputNames[i].value = inputNames[i].value.replace(/[^а-яё\s]/ig, '');
-        }
-    };
-
-    const checkValidInputMessages = () => {
-        for (let i = 0; i < inputMessages.length; i++) {
-            inputMessages[i].value = inputMessages[i].value.replace(/[^а-яё\s]/ig, '');
-        }
-    };
-
-    document.addEventListener('input', checkValidInputPhones);
-    document.addEventListener('input', checkValidInputNames);
-    document.addEventListener('input', checkValidInputMessages);
+    // document.addEventListener('input', checkValidInputMales);
+    // // document.addEventListener('input', checkValidInputPhones);
+    // document.addEventListener('input', checkValidInputNames);
+    // document.addEventListener('input', checkValidInputMessages);
     calcBlock.addEventListener('input', checkValidInput);
 
     // смена картинок
@@ -461,9 +469,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // send-ajax form
 
-    const form1 = document.getElementById('form1');
-    const form2 = document.getElementById('form2');
-    const form3 = document.getElementById('form3');
+    // const form1 = document.getElementById('form1');
+    // const form2 = document.getElementById('form2');
+    // const form3 = document.getElementById('form3');
 
     const sendForm = () => {
         const errorMessage = 'Что-то пошло не так...';
@@ -476,7 +484,21 @@ window.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             let target = e.target;
             console.log(target);
+
             const inputFormElems = target.querySelectorAll('input');
+            const inputMail = target.querySelector('input[name="user_mail"]');
+            const inputPhone = target.querySelector('input[name="user_phone"]');
+            console.log(inputPhone);
+            const inputName = target.querySelector('input[name="user_name"]');
+            console.log(inputName);
+            const inputMessage = target.querySelector('input[name="user_message"]');
+
+            inputPhone.value = inputPhone.value.replace(/[^0-9]/g, '');
+            inputMail.value = inputPhone.value.replace(/^\w+@\w+\.w{2,}$/, '');
+            inputName.value = inputPhone.value.replace(/[^а-яё\s]/ig, '');
+            console.log(inputName.value);
+            inputMessage.value = inputPhone.value.replace(/[^а-яё\s]/ig, '');
+
             console.log(inputFormElems);
             console.log(target.id);
             target.appendChild(statusMessage);
