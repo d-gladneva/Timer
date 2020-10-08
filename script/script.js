@@ -25,11 +25,11 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const calcBlock = document.querySelector('.calc-block');
     const inputElems = calcBlock.querySelectorAll('input[type="text"]');
-    // const inputMails = document.querySelectorAll('input[name="user_mail"]');
-    // const inputPhones = document.querySelectorAll('input[name="user_phone"]');
-    // const inputNames = document.querySelectorAll('input[name="user_name"]');
-    // const inputMessages = document.querySelectorAll('input[name="user_message"]');
-    // console.log(inputPhones);
+    const inputMails = document.querySelectorAll('input[name="user_email"]');
+    const inputPhones = document.querySelectorAll('input[name="user_phone"]');
+    const inputNames = document.querySelectorAll('input[name="user_name"]');
+    const inputMessages = document.querySelectorAll('input[name="user_message"]');
+    console.log(inputPhones);
 
 
     const checkValidInput = () => {
@@ -37,34 +37,42 @@ window.addEventListener('DOMContentLoaded', () => {
             inputElems[i].value = inputElems[i].value.replace(/\D/g, '');
         }
     };
-    //
-    // const checkValidInputMales = () => {
-    //     for (let i = 0; i < inputMails.length; i++) {
-    //         // inputMails[i].value = inputMails[i].value.replace(/\D/g, '');
-    //         if (inputMails[i].value !== /^\+?[78]([-()]*\d){10}$/) {
-    //             alert('Введите верное значение!');
-    //             inputMails[i].value = inputMails[i].value.replace(/\D/g, '');
-    //         }
-    //
-    //     }
-    // };
-    //
-    // const checkValidInputNames = () => {
-    //     for (let i = 0; i < inputNames.length; i++) {
-    //         inputNames[i].value = inputNames[i].value.replace(/[^а-яё\s]/ig, '');
-    //     }
-    // };
-    //
-    // const checkValidInputMessages = () => {
-    //     for (let i = 0; i < inputMessages.length; i++) {
-    //         inputMessages[i].value = inputMessages[i].value.replace(/[^а-яё\s]/ig, '');
-    //     }
-    // };
 
-    // document.addEventListener('input', checkValidInputMales);
-    // // document.addEventListener('input', checkValidInputPhones);
-    // document.addEventListener('input', checkValidInputNames);
-    // document.addEventListener('input', checkValidInputMessages);
+    const checkValidInputMales = () => {
+        for (let i = 0; i < inputMails.length; i++) {
+            inputMails[i].value = inputMails[i].value.replace(/^\w+@\w+\.w{2,}$/, '');
+            // if (inputMails[i].value !== /^\+?[78]([-()]*\d){10}$/) {
+            //     alert('Введите верное значение!');
+            //     inputMails[i].value = inputMails[i].value.replace(/\D/g, '');
+            // }
+
+        }
+    };
+
+    const checkValidInputPhones = () => {
+        let checkPhone = /^\+?[78]([-()]*\d){10}$/;
+        for (let i = 0; i < inputNames.length; i++) {
+            inputNames[i].value = inputNames[i].value.replace(/^\+?[78]([-()]*\d){10}$/, '');
+            let valid = checkPhone.test(inputNames[i].value);
+        }
+    };
+
+    const checkValidInputNames = () => {
+        for (let i = 0; i < inputNames.length; i++) {
+            inputNames[i].value = inputNames[i].value.replace(/[^а-яё\s]/ig, '');
+        }
+    };
+
+    const checkValidInputMessages = () => {
+        for (let i = 0; i < inputMessages.length; i++) {
+            inputMessages[i].value = inputMessages[i].value.replace(/[^а-яё\s]/ig, '');
+        }
+    };
+
+    document.addEventListener('input', checkValidInputMales);
+    // document.addEventListener('input', checkValidInputPhones);
+    document.addEventListener('input', checkValidInputNames);
+    document.addEventListener('input', checkValidInputMessages);
     calcBlock.addEventListener('input', checkValidInput);
 
     // смена картинок
@@ -469,15 +477,16 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // send-ajax form
 
-    // const form1 = document.getElementById('form1');
-    // const form2 = document.getElementById('form2');
-    // const form3 = document.getElementById('form3');
+
 
     const sendForm = () => {
         const errorMessage = 'Что-то пошло не так...';
         const loadMessage = 'Загрузка...';
         const succesMessage = 'Спасибо! Мы скоро с Вами свяжемся!';
         const statusMessage = document.createElement('div');
+
+
+
         statusMessage.style.cssText = 'font-size: 2rem; color: #fff';
 
         const sendAllForms = (e) => {
@@ -486,38 +495,73 @@ window.addEventListener('DOMContentLoaded', () => {
             console.log(target);
 
             const inputFormElems = target.querySelectorAll('input');
-            const inputMail = target.querySelector('input[name="user_mail"]');
+            const inputMail = target.querySelector('input[name="user_email"]');
             const inputPhone = target.querySelector('input[name="user_phone"]');
             console.log(inputPhone);
             const inputName = target.querySelector('input[name="user_name"]');
             console.log(inputName);
             const inputMessage = target.querySelector('input[name="user_message"]');
+            const formBtn = target.querySelector('.form-btn');
+            console.log(formBtn);
 
-            inputPhone.value = inputPhone.value.replace(/[^0-9]/g, '');
-            inputMail.value = inputPhone.value.replace(/^\w+@\w+\.w{2,}$/, '');
-            inputName.value = inputPhone.value.replace(/[^а-яё\s]/ig, '');
-            console.log(inputName.value);
-            inputMessage.value = inputPhone.value.replace(/[^а-яё\s]/ig, '');
+            // if (target.name && (target.name === 'user_name' || target.id === 'user_phone' ||
+            //     target.id === 'user_email')) {
 
-            console.log(inputFormElems);
-            console.log(target.id);
-            target.appendChild(statusMessage);
-            statusMessage.textContent = loadMessage;
-            const formData = new FormData(target);
-            let body = {};
-            formData.forEach((val, key) => {
-                body[key] = val;
-            });
-            postData(body, () => {
-                statusMessage.textContent = succesMessage;
-                for (let i = 0; i < inputFormElems.length; i++) {
-                    inputFormElems[i].value = '';
-                }
+                const onBtn = () => {
+                    formBtn.forEach((item) => {
+                        item.removeAttribute('disabled');
+                    });
+                };
 
-            }, (error) => {
-                statusMessage.textContent = errorMessage;
-                console.log(error);
-            });
+                const offBtn = () => {
+                    formBtn.forEach((item) => {
+                        item.setAttribute('disabled', true);
+                    });
+                };
+
+                    if (inputPhone.value === '' || inputMail.value === '' || inputName.value === '') {
+                        console.log(2);
+                        formBtn.disabled = 'true';
+                    } else if (inputPhone.value !== '' && inputMail.value !== '' && inputName.value !== ''){
+
+                        console.log(inputPhone.value);
+                        let checkPhone = /^\d[\d\(\)\ -]{4,14}\d$/;
+                        let valid = checkPhone.test(inputPhone.value);
+                        if (!valid){
+                            const errorDiv = document.createElement('div');
+                            errorDiv.textContent = 'Ошибка в этом поле';
+                            inputPhone.insertAdjacentElement('afterend', errorDiv);
+                        }
+                        console.log(1);
+
+                        target.appendChild(statusMessage);
+                        statusMessage.textContent = loadMessage;
+                        const formData = new FormData(target);
+                        let body = {};
+                        formData.forEach((val, key) => {
+                            body[key] = val;
+                        });
+
+                        postData(body, () => {
+                            statusMessage.textContent = succesMessage;
+                            for (let i = 0; i < inputFormElems.length; i++) {
+                                inputFormElems[i].value = '';
+                            }
+
+                        }, (error) => {
+                            statusMessage.textContent = errorMessage;
+                            console.log(error);
+                        });
+                        formBtn.disabled = 'false';
+                    }
+
+                // inputPhone.value = inputPhone.value.replace(/[^0-9]/g, '');
+                // inputMail.value = inputPhone.value.replace(/^\w+@\w+\.w{2,}$/, '');
+                // inputName.value = inputPhone.value.replace(/[^а-яё\s]/ig, '');
+                // inputMessage.value = inputPhone.value.replace(/[^а-яё\s]/ig, '');
+            // }
+
+
         };
 
         document.addEventListener('submit', sendAllForms);
@@ -541,7 +585,15 @@ window.addEventListener('DOMContentLoaded', () => {
             request.setRequestHeader('Content-Type', 'application/json');
             console.log(body);
             request.send(JSON.stringify(body));
-        }
+        };
+
+        document.body.addEventListener('input', event => {
+            sendAllForms(event.target);
+        });
+
+        document.body.addEventListener('submit', event => {
+            sendAllForms(event.target);
+        });
     };
 
     sendForm();
