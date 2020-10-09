@@ -477,6 +477,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // send-ajax form
 
+
     const sendForm = () => {
         const errorMessage = 'Что-то пошло не так...';
         const loadMessage = 'Загрузка...';
@@ -504,19 +505,19 @@ window.addEventListener('DOMContentLoaded', () => {
 
             if (elemWork.name === 'user_phone') {
                 elemWork.value = elemWork.value.replace(/^\++/g, '+');
-                elemWork.value = elemWork.value.replace(/[^\++/, '-')0-9]{10, }/g, '');
+                elemWork.value = elemWork.value.replace(/[^+0-9]/g, '');
                 let valid = checkPhone.test(elemWork.value);
                 if (!valid) {
 
                     const errorDiv = document.createElement('div');
                     errorDiv.textContent = 'Ошибка в этом поле';
-                    if (elemWork.nextElementSibling && elemWork.nextElementSibling.textContent === 'Ошибка в этом поле') {
+                    if(elemWork.nextElementSibling && elemWork.nextElementSibling.textContent === 'Ошибка в этом поле'){
                         return;
                     }
                     elemWork.insertAdjacentElement('afterend', errorDiv);
                     offBtn();
                 } else {
-                    if (elemWork.parentNode.lastElementChild.textContent === 'Ошибка в этом поле') {
+                    if (elemWork.parentNode.lastElementChild.textContent === 'Ошибка в этом поле'){
                         elemWork.parentNode.lastElementChild.remove();
                     }
                     onBtn();
@@ -530,24 +531,24 @@ window.addEventListener('DOMContentLoaded', () => {
 
                     const errorDiv = document.createElement('div');
                     errorDiv.textContent = 'Ошибка в этом поле';
-                    if (elemWork.nextElementSibling && elemWork.nextElementSibling.textContent === 'Ошибка в этом поле') {
+                    if(elemWork.nextElementSibling && elemWork.nextElementSibling.textContent === 'Ошибка в этом поле'){
                         return;
                     }
                     elemWork.insertAdjacentElement('afterend', errorDiv);
                     offBtn();
                 } else {
-                    if (elemWork.parentNode.lastElementChild.textContent === 'Ошибка в этом поле') {
+                    if (elemWork.parentNode.lastElementChild.textContent === 'Ошибка в этом поле'){
                         elemWork.parentNode.lastElementChild.remove();
                     }
                     onBtn();
                 }
             }
 
-            if (elemWork.name === 'user_name') {
+            if (elemWork.name === 'user_name'){
                 elemWork.value = elemWork.value.replace(/[^а-яё\s]/ig, '');
             }
 
-            if (elemWork.name === 'user_message') {
+            if (elemWork.name === 'user_message'){
                 elemWork.value = elemWork.value.replace(/[^а-яё\s]/ig, '');
             }
         };
