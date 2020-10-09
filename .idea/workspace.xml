@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d2cd5a8f-2d82-4da4-8a3b-4314bc22b700" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/script/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/script/script.js" afterDir="false" />
-    </list>
+    <list default="true" id="d2cd5a8f-2d82-4da4-8a3b-4314bc22b700" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -69,8 +67,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/script/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="305">
-              <caret line="543" column="73" lean-forward="true" selection-start-line="543" selection-start-column="73" selection-end-line="543" selection-end-column="73" />
+            <state relative-caret-position="293">
+              <caret line="571" column="36" lean-forward="true" selection-start-line="571" selection-start-column="36" selection-end-line="571" selection-end-column="36" />
               <folding>
                 <marker date="1602260321076" expanded="true" signature="849:1165" ph="..." />
                 <marker date="1602260321076" expanded="true" signature="2193:2401" ph="..." />
@@ -206,15 +204,16 @@
       <updated>1600344615066</updated>
       <workItem from="1600344616465" duration="85973000" />
       <workItem from="1600848073249" duration="3348000" />
-      <workItem from="1601902934041" duration="109155000" />
+      <workItem from="1601902934041" duration="110520000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="344333000" />
+    <option name="totallyTimeSpent" value="345698000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15977742" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -328,8 +327,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/script/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="543" column="73" lean-forward="true" selection-start-line="543" selection-start-column="73" selection-end-line="543" selection-end-column="73" />
+        <state relative-caret-position="293">
+          <caret line="571" column="36" lean-forward="true" selection-start-line="571" selection-start-column="36" selection-end-line="571" selection-end-column="36" />
           <folding>
             <marker date="1602260321076" expanded="true" signature="849:1165" ph="..." />
             <marker date="1602260321076" expanded="true" signature="2193:2401" ph="..." />

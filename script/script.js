@@ -572,7 +572,7 @@ window.addEventListener('DOMContentLoaded', () => {
                     if (inputMessage) {
                         isMessage = 'true';
                     }
-                    if (isMessage && inputMessage !== '') {
+                    if (isMessage && inputMessage.value !== '') {
 
                         elemWork.appendChild(statusMessage);
                         statusMessage.textContent = loadMessage;
