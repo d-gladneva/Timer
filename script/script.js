@@ -504,6 +504,7 @@ window.addEventListener('DOMContentLoaded', () => {
             const checkEmail = /^\w+@\w+\.w{2,}$/;
 
             if (elemWork.name === 'user_phone') {
+                console.log(elemWork.name);
                 elemWork.value = elemWork.value.replace(/^\++/g, '+');
                 elemWork.value = elemWork.value.replace(/[^+0-9]/g, '');
                 let valid = checkPhone.test(elemWork.value);
@@ -525,26 +526,29 @@ window.addEventListener('DOMContentLoaded', () => {
             }
 
             if (elemWork.name === 'user_email') {
+                console.log(elemWork.name);
                 elemWork.value = elemWork.value.replace(/[^@a-zA-Z0-9.-_]/g, '');
-                let valid = checkEmail.test(elemWork.value);
-                if (!valid) {
-
-                    const errorDiv = document.createElement('div');
-                    errorDiv.textContent = 'Ошибка в этом поле';
-                    if(elemWork.nextElementSibling && elemWork.nextElementSibling.textContent === 'Ошибка в этом поле'){
-                        return;
-                    }
-                    elemWork.insertAdjacentElement('afterend', errorDiv);
-                    offBtn();
-                } else {
-                    if (elemWork.parentNode.lastElementChild.textContent === 'Ошибка в этом поле'){
-                        elemWork.parentNode.lastElementChild.remove();
-                    }
-                    onBtn();
-                }
+                // if (!checkEmail.test(elemWork.value)) {
+                //
+                //     const errorDiv = document.createElement('div');
+                //     errorDiv.textContent = 'Ошибка в этом поле';
+                //     if(elemWork.nextElementSibling && elemWork.nextElementSibling.textContent === 'Ошибка в этом поле'){
+                //         return;
+                //     }
+                //     elemWork.insertAdjacentElement('afterend', errorDiv);
+                //     offBtn();
+                // } else {
+                //     console.log(elemWork.parentNode);
+                //     console.log(elemWork.parentNode);
+                //     if (elemWork.parentNode.lastElementChild.textContent === 'Ошибка в этом поле'){
+                //         elemWork.parentNode.lastElementChild.remove();
+                //     }
+                //     onBtn();
+                // }
             }
 
             if (elemWork.name === 'user_name'){
+                console.log(elemWork.name);
                 elemWork.value = elemWork.value.replace(/[^а-яё\s]/ig, '');
             }
 
