@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2cd5a8f-2d82-4da4-8a3b-4314bc22b700" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/script/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/script/script.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -61,8 +60,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/plugins/validator/validator.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151">
-              <caret line="72" column="8" lean-forward="true" selection-start-line="72" selection-start-column="8" selection-end-line="72" selection-end-column="52" />
+            <state relative-caret-position="329">
+              <caret line="112" column="33" lean-forward="true" selection-start-line="112" selection-start-column="33" selection-end-line="112" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -70,14 +69,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/script/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="549" lean-forward="true" selection-start-line="549" selection-end-line="549" />
+            <state relative-caret-position="248">
+              <caret line="506" column="78" selection-start-line="506" selection-start-column="78" selection-end-line="506" selection-end-column="78" />
               <folding>
-                <marker date="1602170305177" expanded="true" signature="849:1165" ph="..." />
-                <marker date="1602170305177" expanded="true" signature="2127:2320" ph="..." />
-                <marker date="1602170305177" expanded="true" signature="2529:2783" ph="..." />
-                <marker date="1602170305177" expanded="true" signature="8902:9039" ph="..." />
-                <marker date="1602170305177" expanded="true" signature="19540:19551" ph="..." />
+                <marker date="1602234659255" expanded="true" signature="849:1165" ph="..." />
+                <marker date="1602234659255" expanded="true" signature="2193:2401" ph="..." />
+                <marker date="1602234659255" expanded="true" signature="2631:2897" ph="..." />
+                <marker date="1602234659255" expanded="true" signature="9019:9156" ph="..." />
               </folding>
             </state>
           </provider>
@@ -207,12 +205,12 @@
       <updated>1600344615066</updated>
       <workItem from="1600344616465" duration="85973000" />
       <workItem from="1600848073249" duration="3348000" />
-      <workItem from="1601902934041" duration="83737000" />
+      <workItem from="1601902934041" duration="103048000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="318915000" />
+    <option name="totallyTimeSpent" value="338226000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -323,21 +321,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/plugins/validator/validator.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="72" column="8" lean-forward="true" selection-start-line="72" selection-start-column="8" selection-end-line="72" selection-end-column="52" />
+        <state relative-caret-position="329">
+          <caret line="112" column="33" lean-forward="true" selection-start-line="112" selection-start-column="33" selection-end-line="112" selection-end-column="51" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/script/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="549" lean-forward="true" selection-start-line="549" selection-end-line="549" />
+        <state relative-caret-position="248">
+          <caret line="506" column="78" selection-start-line="506" selection-start-column="78" selection-end-line="506" selection-end-column="78" />
           <folding>
-            <marker date="1602170305177" expanded="true" signature="849:1165" ph="..." />
-            <marker date="1602170305177" expanded="true" signature="2127:2320" ph="..." />
-            <marker date="1602170305177" expanded="true" signature="2529:2783" ph="..." />
-            <marker date="1602170305177" expanded="true" signature="8902:9039" ph="..." />
-            <marker date="1602170305177" expanded="true" signature="19540:19551" ph="..." />
+            <marker date="1602234659255" expanded="true" signature="849:1165" ph="..." />
+            <marker date="1602234659255" expanded="true" signature="2193:2401" ph="..." />
+            <marker date="1602234659255" expanded="true" signature="2631:2897" ph="..." />
+            <marker date="1602234659255" expanded="true" signature="9019:9156" ph="..." />
           </folding>
         </state>
       </provider>
