@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2cd5a8f-2d82-4da4-8a3b-4314bc22b700" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/filterEvalTryCatch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/script/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/script/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/filterEvalTryCatch/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/filterEvalTryCatch/js/script.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,7 +22,7 @@
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="4396">
-              <caret line="405" column="24" lean-forward="true" selection-start-line="405" selection-start-column="24" selection-end-line="405" selection-end-column="24" />
+              <caret line="405" column="24" selection-start-line="405" selection-start-column="24" selection-end-line="405" selection-end-column="24" />
               <folding>
                 <element signature="n#div#0;n#header#0;n#main#0;n#body#0;n#html#0;n#!!top" />
               </folding>
@@ -41,7 +43,7 @@
         <entry file="file://$PROJECT_DIR$/server.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="51">
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
         </entry>
@@ -62,25 +64,46 @@
         <entry file="file://$PROJECT_DIR$/plugins/validator/validator.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="329">
-              <caret line="112" column="33" lean-forward="true" selection-start-line="112" selection-start-column="33" selection-end-line="112" selection-end-column="51" />
+              <caret line="112" column="33" selection-start-line="112" selection-start-column="33" selection-end-line="112" selection-end-column="51" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/script/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="150" column="28" lean-forward="true" selection-start-line="150" selection-start-column="28" selection-end-line="150" selection-end-column="28" />
+            <state relative-caret-position="227">
+              <caret line="154" column="28" selection-start-line="154" selection-start-column="28" selection-end-line="154" selection-end-column="28" />
               <folding>
-                <marker date="1602323510006" expanded="true" signature="849:1165" ph="..." />
-                <marker date="1602323510006" expanded="true" signature="2193:2401" ph="..." />
-                <marker date="1602323510006" expanded="true" signature="2631:2897" ph="..." />
-                <marker date="1602323510006" expanded="true" signature="9019:9156" ph="..." />
-                <marker date="1602323510006" expanded="true" signature="17056:17128" ph="..." />
+                <marker date="1602323744376" expanded="true" signature="849:1165" ph="..." />
+                <marker date="1602323744376" expanded="true" signature="2193:2401" ph="..." />
+                <marker date="1602323744376" expanded="true" signature="2631:2897" ph="..." />
+                <marker date="1602323744376" expanded="true" signature="8927:9064" ph="..." />
+                <marker date="1602323744376" expanded="true" signature="16964:17036" ph="..." />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/filterEvalTryCatch/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-406" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/filterEvalTryCatch/js/script.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="280">
+              <caret line="49" column="6" lean-forward="true" selection-start-line="49" selection-start-column="6" selection-end-line="49" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/filterEvalTryCatch/style/main.css">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -121,7 +144,7 @@
     </findStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/filterEvalTryCatch" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -142,6 +165,7 @@
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/server.php" />
         <option value="$PROJECT_DIR$/script/script.js" />
+        <option value="$PROJECT_DIR$/filterEvalTryCatch/js/script.js" />
       </list>
     </option>
   </component>
@@ -164,6 +188,23 @@
             <path>
               <item name="Timer" type="b2602c69:ProjectViewProjectNode" />
               <item name="Timer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Timer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Timer" type="462c0819:PsiDirectoryNode" />
+              <item name="filterEvalTryCatch" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Timer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Timer" type="462c0819:PsiDirectoryNode" />
+              <item name="filterEvalTryCatch" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Timer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Timer" type="462c0819:PsiDirectoryNode" />
+              <item name="filterEvalTryCatch" type="462c0819:PsiDirectoryNode" />
+              <item name="style" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -207,18 +248,18 @@
       <updated>1600344615066</updated>
       <workItem from="1600344616465" duration="85973000" />
       <workItem from="1600848073249" duration="3348000" />
-      <workItem from="1601902934041" duration="111937000" />
+      <workItem from="1601902934041" duration="117720000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="347115000" />
+    <option name="totallyTimeSpent" value="352898000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15977742" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15977742" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -230,7 +271,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.1758437" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.1758437" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -297,7 +338,7 @@
     <entry file="file://$PROJECT_DIR$/server.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
@@ -314,31 +355,46 @@
     <entry file="file://$PROJECT_DIR$/plugins/validator/validator.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="329">
-          <caret line="112" column="33" lean-forward="true" selection-start-line="112" selection-start-column="33" selection-end-line="112" selection-end-column="51" />
+          <caret line="112" column="33" selection-start-line="112" selection-start-column="33" selection-end-line="112" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/filterEvalTryCatch/style/main.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="154" column="28" selection-start-line="154" selection-start-column="28" selection-end-line="154" selection-end-column="28" />
+          <folding>
+            <marker date="1602323744376" expanded="true" signature="849:1165" ph="..." />
+            <marker date="1602323744376" expanded="true" signature="2193:2401" ph="..." />
+            <marker date="1602323744376" expanded="true" signature="2631:2897" ph="..." />
+            <marker date="1602323744376" expanded="true" signature="8927:9064" ph="..." />
+            <marker date="1602323744376" expanded="true" signature="16964:17036" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4396">
-          <caret line="405" column="24" lean-forward="true" selection-start-line="405" selection-start-column="24" selection-end-line="405" selection-end-column="24" />
+          <caret line="405" column="24" selection-start-line="405" selection-start-column="24" selection-end-line="405" selection-end-column="24" />
           <folding>
             <element signature="n#div#0;n#header#0;n#main#0;n#body#0;n#html#0;n#!!top" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/script/script.js">
+    <entry file="file://$PROJECT_DIR$/filterEvalTryCatch/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="150" column="28" lean-forward="true" selection-start-line="150" selection-start-column="28" selection-end-line="150" selection-end-column="28" />
-          <folding>
-            <marker date="1602323510006" expanded="true" signature="849:1165" ph="..." />
-            <marker date="1602323510006" expanded="true" signature="2193:2401" ph="..." />
-            <marker date="1602323510006" expanded="true" signature="2631:2897" ph="..." />
-            <marker date="1602323510006" expanded="true" signature="9019:9156" ph="..." />
-            <marker date="1602323510006" expanded="true" signature="17056:17128" ph="..." />
-          </folding>
+        <state relative-caret-position="-406" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/filterEvalTryCatch/js/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="49" column="6" lean-forward="true" selection-start-line="49" selection-start-column="6" selection-end-line="49" selection-end-column="6" />
         </state>
       </provider>
     </entry>
