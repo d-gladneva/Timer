@@ -132,20 +132,19 @@ window.addEventListener('DOMContentLoaded', () => {
                 timerSeconds.textContent = '0' + timer.seconds;
             }
             if (timer.timeRemaining > 0) {
-                let timeOut = setTimeout(upDateClock, 1000);
+                setTimeout(upDateClock, 1000);
             } else {
                 timerHours.textContent = '00';
                 timerMinutes.textContent = '00';
                 timerSeconds.textContent = '00';
-                clearTimeout(timeOut);
+                clearTimeout();
             }
         };
 
         upDateClock();
     };
 
-    countTimer('31 december 2020');
-    // let calcDate = setInterval(countTimer, 1000, '01 october 2020');
+    countTimer('31 december  2020');
 
     // меню
     const menu = document.querySelector('menu');
