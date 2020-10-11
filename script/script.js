@@ -571,29 +571,7 @@ window.addEventListener('DOMContentLoaded', () => {
                     if (inputMessage) {
                         isMessage = 'true';
                     }
-                    if (isMessage === 'false'){
-                        console.log(inputMessage);
-                        elemWork.appendChild(statusMessage);
-                        statusMessage.textContent = loadMessage;
-                        const formData = new FormData(elemWork);
-                        let body = {};
-                        formData.forEach((val, key) => {
-                            body[key] = val;
-                        });
-
-                        postData(body)
-                            .then(() => {
-                                statusMessage.textContent = succesMessage;
-                                for (let i = 0; i < inputFormElems.length; i++) {
-                                    inputFormElems[i].value = '';
-                                }
-
-                            })
-                            .catch((error) => {
-                                statusMessage.textContent = errorMessage;
-                                console.log(error);
-                            });
-                    } else if (isMessage && inputMessage.value !==''){
+                    if (isMessage === 'false' || isMessage && inputMessage.value !==''){
                         console.log(inputMessage);
                         elemWork.appendChild(statusMessage);
                         statusMessage.textContent = loadMessage;
