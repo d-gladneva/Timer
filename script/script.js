@@ -582,7 +582,12 @@ window.addEventListener('DOMContentLoaded', () => {
                         });
 
                         postData(body)
-                            .then(() => {
+                            .then((response) => {
+                                console.log(elemWork);
+                                console.log(response);
+                                if  (response.ok !== true){
+                                    throw new Error('status network not 200');
+                                }
                                 statusMessage.textContent = succesMessage;
                                 for (let i = 0; i < inputFormElems.length; i++) {
                                     inputFormElems[i].value = '';
@@ -601,28 +606,39 @@ window.addEventListener('DOMContentLoaded', () => {
         };
 
         const postData = (body) => {
-            const promise = new Promise((resolve, reject) => {
-                const request = new XMLHttpRequest();
-
-                request.addEventListener('readystatechange', () => {
-                    if (request.readyState !== 4) {
-                        return;
-                    }
-                    if (request.status === 200) {
-                        resolve();
-                    } else {
-                        reject();
-                    }
-                });
-
-                request.open('POST', './server.php');
-                request.setRequestHeader('Content-Type', 'application/json');
-                console.log(body);
-                request.send(JSON.stringify(body));
+            return fetch('./server.php', {
+                method: 'POST',
+                // mode: 'same-origin',
+                // cache: 'default',
+                // credentials: 'same-origin',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(body)
             });
-            return promise;
 
         };
+
+        // const promise = new Promise((resolve, reject) => {
+        //     const request = new XMLHttpRequest();
+        //
+        //     request.addEventListener('readystatechange', () => {
+        //         if (request.readyState !== 4) {
+        //             return;
+        //         }
+        //         if (request.status === 200) {
+        //             resolve();
+        //         } else {
+        //             reject();
+        //         }
+        //     });
+        //
+        //     request.open('POST', './server.php');
+        //     request.setRequestHeader('Content-Type', 'application/json');
+        //     console.log(body);
+        //     request.send(JSON.stringify(body));
+        // });
+        // return promise;
 
         document.body.addEventListener('input', event => {
             event.preventDefault();
