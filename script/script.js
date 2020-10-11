@@ -511,13 +511,13 @@ window.addEventListener('DOMContentLoaded', () => {
 
                     const errorDiv = document.createElement('div');
                     errorDiv.textContent = 'Ошибка в этом поле';
-                    if(elemWork.nextElementSibling && elemWork.nextElementSibling.textContent === 'Ошибка в этом поле'){
+                    if (elemWork.nextElementSibling && elemWork.nextElementSibling.textContent === 'Ошибка в этом поле') {
                         return;
                     }
                     elemWork.insertAdjacentElement('afterend', errorDiv);
                     offBtn();
                 } else {
-                    if (elemWork.parentNode.lastElementChild.textContent === 'Ошибка в этом поле'){
+                    if (elemWork.parentNode.lastElementChild.textContent === 'Ошибка в этом поле') {
                         elemWork.parentNode.lastElementChild.remove();
                     }
                     onBtn();
@@ -546,12 +546,12 @@ window.addEventListener('DOMContentLoaded', () => {
                 // }
             }
 
-            if (elemWork.name === 'user_name'){
+            if (elemWork.name === 'user_name') {
                 console.log(elemWork.name);
                 elemWork.value = elemWork.value.replace(/[^а-яё\s]/ig, '');
             }
 
-            if (elemWork.name === 'user_message'){
+            if (elemWork.name === 'user_message') {
                 elemWork.value = elemWork.value.replace(/[^а-яё\s]/ig, '');
             }
         };
@@ -571,8 +571,8 @@ window.addEventListener('DOMContentLoaded', () => {
                     if (inputMessage) {
                         isMessage = 'true';
                     }
-                    if (isMessage && inputMessage.value !== '') {
-
+                    if (isMessage === 'false'){
+                        console.log(inputMessage);
                         elemWork.appendChild(statusMessage);
                         statusMessage.textContent = loadMessage;
                         const formData = new FormData(elemWork);
@@ -581,41 +581,69 @@ window.addEventListener('DOMContentLoaded', () => {
                             body[key] = val;
                         });
 
-                        postData(body, () => {
-                            statusMessage.textContent = succesMessage;
-                            for (let i = 0; i < inputFormElems.length; i++) {
-                                inputFormElems[i].value = '';
-                            }
+                        postData(body)
+                            .then(() => {
+                                statusMessage.textContent = succesMessage;
+                                for (let i = 0; i < inputFormElems.length; i++) {
+                                    inputFormElems[i].value = '';
+                                }
 
-                        }, (error) => {
-                            statusMessage.textContent = errorMessage;
-                            console.log(error);
+                            })
+                            .catch((error) => {
+                                statusMessage.textContent = errorMessage;
+                                console.log(error);
+                            });
+                    } else if (isMessage && inputMessage.value !==''){
+                        console.log(inputMessage);
+                        elemWork.appendChild(statusMessage);
+                        statusMessage.textContent = loadMessage;
+                        const formData = new FormData(elemWork);
+                        let body = {};
+                        formData.forEach((val, key) => {
+                            body[key] = val;
                         });
+
+                        postData(body)
+                            .then(() => {
+                                statusMessage.textContent = succesMessage;
+                                for (let i = 0; i < inputFormElems.length; i++) {
+                                    inputFormElems[i].value = '';
+                                }
+
+                            })
+                            .catch((error) => {
+                                statusMessage.textContent = errorMessage;
+                                console.log(error);
+                            });
                     }
+
                 }
             }
 
         };
 
-        const postData = (body, outputData, errorData) => {
-            const request = new XMLHttpRequest();
+        const postData = (body) => {
+            const promise = new Promise((resolve, reject) => {
+                const request = new XMLHttpRequest();
 
-            request.addEventListener('readystatechange', () => {
-                if (request.readyState !== 4) {
-                    return;
-                }
-                if (request.status === 200) {
+                request.addEventListener('readystatechange', () => {
+                    if (request.readyState !== 4) {
+                        return;
+                    }
+                    if (request.status === 200) {
+                        resolve();
+                    } else {
+                        reject();
+                    }
+                });
 
-                    outputData();
-                } else {
-                    errorData(request.status);
-                }
+                request.open('POST', './server.php');
+                request.setRequestHeader('Content-Type', 'application/json');
+                console.log(body);
+                request.send(JSON.stringify(body));
             });
+            return promise;
 
-            request.open('POST', './server.php');
-            request.setRequestHeader('Content-Type', 'application/json');
-            console.log(body);
-            request.send(JSON.stringify(body));
         };
 
         document.body.addEventListener('input', event => {
