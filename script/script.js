@@ -600,7 +600,6 @@ window.addEventListener('DOMContentLoaded', () => {
                                     inputFormElems[i].value = '';
                                 }
 
-                                removePrompt();
                                 setTimeout(() => {
                                     statusMessage.remove();
                                 }, 5000);
