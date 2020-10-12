@@ -552,7 +552,9 @@ window.addEventListener('DOMContentLoaded', () => {
             }
 
             if (elemWork.name === 'user_message') {
-                elemWork.value = elemWork.value.replace(/[^а-яё\s]/ig, '');
+                // elemWork.value = elemWork.value.replace(/[^а-яё\s]/ig, '');
+
+                elemWork.value = elemWork.value.replace(/[^а-яА-Я ,.?!"';:\-\%()\#]/g, '');
             }
         };
 
@@ -566,12 +568,16 @@ window.addEventListener('DOMContentLoaded', () => {
                 const inputName = elemWork.querySelector('input[name="user_name"]');
                 const inputMessage = elemWork.querySelector('input[name="user_message"]');
 
-                if (inputPhone.value !== '' && inputMail.value !== '' && inputName.value !== '') {
-                    let isMessage = 'false';
-                    if (inputMessage) {
-                        isMessage = 'true';
+                const removePrompt = () => {
+                    for (let i = 0; i < inputFormElems.length; i++) {
+                        if (inputFormElems[i].parentNode.lastElementChild.textContent === 'Заполните поле!') {
+                            inputFormElems[i].nextElementSibling.remove();
+                        }
                     }
-                    if (isMessage === 'false' || isMessage && inputMessage.value !==''){
+                };
+
+                if (inputPhone.value !== '' && inputMail.value !== '' && inputName.value !== '') {
+                    if (!inputMessage || inputMessage && inputMessage.value !== '') {
                         console.log(inputMessage);
                         elemWork.appendChild(statusMessage);
                         statusMessage.textContent = loadMessage;
@@ -585,7 +591,7 @@ window.addEventListener('DOMContentLoaded', () => {
                             .then((response) => {
                                 console.log(elemWork);
                                 console.log(response);
-                                if  (response.ok !== true){
+                                if (response.ok !== true) {
                                     throw new Error('status network not 200');
                                 }
                                 statusMessage.textContent = succesMessage;
@@ -593,15 +599,49 @@ window.addEventListener('DOMContentLoaded', () => {
                                     inputFormElems[i].value = '';
                                 }
 
+                                removePrompt();
+                                setTimeout(() => {
+                                    statusMessage.remove();
+                                }, 5000);
+
                             })
                             .catch((error) => {
                                 statusMessage.textContent = errorMessage;
                                 console.log(error);
                             });
+                    } else if (inputMessage && inputMessage.value === ''){
+                        for (let i = 0; i < inputFormElems.length; i++){
+                            const errorDiv = document.createElement('div');
+                            errorDiv.textContent = 'Заполните поле!';
+                            if (inputFormElems[i].nextElementSibling && inputFormElems[i].nextElementSibling.textContent === 'Заполните поле!') {
+                                return;
+                            }
+                            if (inputFormElems[i].value === ''){
+                                inputFormElems[i].insertAdjacentElement('afterend', errorDiv);
+                            }
+                        }
                     }
 
+                } else {
+                    for (let i = 0; i < inputFormElems.length; i++) {
+                        const errorDiv = document.createElement('div');
+                        errorDiv.textContent = 'Заполните поле!';
+                        console.log(inputFormElems[i]);
+                        if (inputFormElems[i].nextElementSibling && inputFormElems[i].nextElementSibling.textContent === 'Заполните поле!') {
+                            return;
+                        }
+                        if (inputFormElems[i].value === '') {
+                            inputFormElems[i].insertAdjacentElement('afterend', errorDiv);
+                            console.log(inputFormElems[i]);
+                            // setTimeout(() => {
+                            //     inputFormElems[i].nextElementSibling.remove();
+                            // }, 2000);
+                        }
+                    }
                 }
+                document.body.addEventListener('input', removePrompt);
             }
+
 
         };
 
