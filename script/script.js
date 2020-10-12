@@ -485,8 +485,15 @@ window.addEventListener('DOMContentLoaded', () => {
 
         statusMessage.style.cssText = 'font-size: 2rem; color: #fff';
 
+        const removePrompt = (elemWork) => {
+            if (elemWork.nextElementSibling&&elemWork.nextElementSibling.textContent === 'Заполните поле!') {
+                elemWork.nextElementSibling.remove();
+            }
+        };
+
         const validForm = (elemWork) => {
             const formBtn = document.querySelectorAll('.form-btn');
+
             const onBtn = () => {
                 formBtn.forEach((item) => {
                     item.removeAttribute('disabled');
@@ -568,13 +575,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 const inputName = elemWork.querySelector('input[name="user_name"]');
                 const inputMessage = elemWork.querySelector('input[name="user_message"]');
 
-                const removePrompt = () => {
-                    for (let i = 0; i < inputFormElems.length; i++) {
-                        if (inputFormElems[i].parentNode.lastElementChild.textContent === 'Заполните поле!') {
-                            inputFormElems[i].nextElementSibling.remove();
-                        }
-                    }
-                };
+
 
                 if (inputPhone.value !== '' && inputMail.value !== '' && inputName.value !== '') {
                     if (!inputMessage || inputMessage && inputMessage.value !== '') {
@@ -683,6 +684,7 @@ window.addEventListener('DOMContentLoaded', () => {
         document.body.addEventListener('input', event => {
             event.preventDefault();
             validForm(event.target);
+            removePrompt(event.target);
         });
 
         document.body.addEventListener('submit', event => {
