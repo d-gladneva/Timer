@@ -77,127 +77,34 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // смена картинок
 
-    const command = document.getElementById('command');
-
-
-    command.addEventListener('mouseover', (e) => {
-        let target = e.target;
-        if (target.classList.contains('command__photo')) {
-            let dataSrcValue = target.getAttribute('src');
-            target.src = target.dataset.img;
-            target.setAttribute('data-img', dataSrcValue);
-        }
-    });
-
-    command.addEventListener('mouseout', (e) => {
-        let target = e.target;
-        if (target.classList.contains('command__photo')) {
-            let dataSrcValue = target.getAttribute('src');
-            target.src = target.dataset.img;
-            target.setAttribute('data-img', dataSrcValue);
-        }
-    });
-
+    const changeCommand = () => {
+        const command = document.getElementById('command');
+        command.addEventListener('mouseover', (e) => {
+            let target = e.target;
+            if (target.classList.contains('command__photo')) {
+                let dataSrcValue = target.getAttribute('src');
+                target.src = target.dataset.img;
+                target.setAttribute('data-img', dataSrcValue);
+            }
+        });
+        command.addEventListener('mouseout', (e) => {
+            let target = e.target;
+            if (target.classList.contains('command__photo')) {
+                let dataSrcValue = target.getAttribute('src');
+                target.src = target.dataset.img;
+                target.setAttribute('data-img', dataSrcValue);
+            }
+        });
+    };
+    changeCommand();
 
     //Timer
-    const countTimer = (deadLine) => {
-        let timerHours = document.querySelector('#timer-hours');
-        let timerMinutes = document.querySelector('#timer-minutes');
-        let timerSeconds = document.querySelector('#timer-seconds');
-
-        const getTimeRemaining = () => {
-            let dateStop = new Date(deadLine).getTime();
-            let dateNow = new Date().getTime();
-            let timeRemaining = (dateStop - dateNow) / 1000;
-            let seconds = Math.floor(timeRemaining % 60);
-            let minutes = Math.floor((timeRemaining / 60) % 60);
-            let hours = Math.floor(timeRemaining / 60 / 60);
-            return {timeRemaining, hours, minutes, seconds};
-
-        };
-
-        const upDateClock = () => {
-            let timer = getTimeRemaining();
-
-            timerHours.textContent = timer.hours;
-            if (timer.hours < 10) {
-                timerHours.textContent = '0' + timer.hours;
-            }
-            timerMinutes.textContent = timer.minutes;
-            if (timer.minutes < 10) {
-                timerMinutes.textContent = '0' + timer.minutes;
-            }
-            timerSeconds.textContent = timer.seconds;
-            if (timer.seconds < 10) {
-                timerSeconds.textContent = '0' + timer.seconds;
-            }
-            if (timer.timeRemaining > 0) {
-                setTimeout(upDateClock, 1000);
-            } else {
-                timerHours.textContent = '00';
-                timerMinutes.textContent = '00';
-                timerSeconds.textContent = '00';
-                clearTimeout();
-            }
-        };
-
-        upDateClock();
-    };
-
     countTimer('31 december  2020');
 
     // меню
-    const menu = document.querySelector('menu');
-    const menuItems = menu.querySelectorAll('ul>li');
-    const btnScroll = document.querySelector('#btnScroll');
-    const body = document.querySelector('body');
-    const toggleMenu = () => {
-        const btnMenu = document.querySelector('.menu');
-        const closeBtn = document.querySelector('.close-btn');
-        const activeMenu = document.querySelector('.active-menu');
-        const container = document.querySelector('.container');
-        const handlerMenu = () => {
-            menu.classList.toggle('active-menu');
-        };
-
-        // btnMenu.addEventListener('click', handlerMenu);
-        // // closeBtn.addEventListener('click', handlerMenu);
-        // // menuItems.forEach(elem => elem.addEventListener('click', handlerMenu));
-        // menu.addEventListener('click', (e) => {
-        //     let target = e.target;
-        //      if (target.className === 'close-btn'){
-        //          menu.classList.toggle('active-menu');
-        //          console.log(target);
-        //      } else {
-        //         target = target.closest('a');
-        //         console.log(target);
-        //         menu.classList.toggle('active-menu');
-        //     }
-        // });
-
-        // усложненное с 1 обработчиком
-
-        body.addEventListener('click', (e) => {
-            let target = e.target;
-            if (!menu.classList.contains('active-menu')) {
-                target = target.closest('.menu');
-                if (target) {
-                    menu.classList.toggle('active-menu');
-                }
-            } else if (menu.classList.contains('active-menu')) {
-                if (!target.classList.contains('active-menu')) {
-                    menu.classList.remove('active-menu');
-                } else if (target.classList.contains('close-btn'))
-                    menu.classList.remove('active-menu');
-            }
-
-        });
-
-    };
     toggleMenu();
 
 // popup
-
     const togglePopUp = () => {
         const popup = document.querySelector('.popup');
         const popupBtn = document.querySelectorAll('.popup-btn');
@@ -244,38 +151,37 @@ window.addEventListener('DOMContentLoaded', () => {
         //
         // }));
     };
-
     togglePopUp();
 
 // scroll
 
-    const getPosition = (elem) => {
-        return document.documentElement.scrollTop + elem.getBoundingClientRect().y;
-    };
-
-    const scrollToTarget = (e) => {
-        let target = e.target;
-        target = target.closest('.test');
-        let targetId = target.getAttribute('to');
-        if (target) {
-            const targetTo = document.getElementById(targetId.substring(1, targetId.length));
-            const targetPosition = getPosition(targetTo);
-            const offsetTargetPosition = targetPosition;
-
-            window.scrollTo({
-                top: offsetTargetPosition,
-                behavior: 'smooth'
-            });
+    const smothScrollFromMenu = () => {
+        const getPosition = (elem) => {
+            return document.documentElement.scrollTop + elem.getBoundingClientRect().y;
+        };
+        const scrollToTarget = (e) => {
+            let target = e.target;
+            target = target.closest('.test');
+            let targetId = target.getAttribute('to');
+            if (target) {
+                const targetTo = document.getElementById(targetId.substring(1, targetId.length));
+                const targetPosition = getPosition(targetTo);
+                const offsetTargetPosition = targetPosition;
+                window.scrollTo({
+                    top: offsetTargetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        };
+        const btnScroll = document.querySelector('#btnScroll');
+        const menu = document.querySelector('menu');
+        const menuItems = menu.querySelectorAll('ul>li');
+        btnScroll.addEventListener('click', scrollToTarget);
+        for (let i = 0; i < menuItems.length; i++) {
+            menuItems[i].addEventListener('click', scrollToTarget);
         }
-
     };
-
-    btnScroll.addEventListener('click', scrollToTarget);
-
-    for (let i = 0; i < menuItems.length; i++) {
-        menuItems[i].addEventListener('click', scrollToTarget);
-    }
-
+    smothScrollFromMenu();
 
 // табы
 
@@ -309,11 +215,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
         });
     };
-
     tabs();
 
     const portfolioDots = document.querySelector('.portfolio-dots');
-
     const slide = document.querySelectorAll('.portfolio-item');
 
     const renderDots = (q) => {
@@ -324,7 +228,6 @@ window.addEventListener('DOMContentLoaded', () => {
     };
 
     portfolioDots.insertAdjacentHTML('beforeEnd', renderDots(slide.length));
-
     //слайдер
 
     const slider = () => {
@@ -475,7 +378,6 @@ window.addEventListener('DOMContentLoaded', () => {
     calc(100);
 
     // send-ajax form
-
 
     const sendForm = () => {
         const errorMessage = 'Что-то пошло не так...';
