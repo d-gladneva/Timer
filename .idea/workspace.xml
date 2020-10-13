@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2cd5a8f-2d82-4da4-8a3b-4314bc22b700" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/filterEvalTryCatch" beforeDir="false" afterPath="$PROJECT_DIR$/filterEvalTryCatch" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/filterEvalTryCatch/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/filterEvalTryCatch/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/filterEvalTryCatch/style/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/filterEvalTryCatch/style/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/script/script.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,8 +23,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4396">
-              <caret line="405" column="24" selection-start-line="405" selection-start-column="24" selection-end-line="405" selection-end-column="24" />
+            <state relative-caret-position="4896">
+              <caret line="315" column="85" selection-start-line="315" selection-start-column="85" selection-end-line="315" selection-end-column="85" />
               <folding>
                 <element signature="n#div#0;n#header#0;n#main#0;n#body#0;n#html#0;n#!!top" />
               </folding>
@@ -61,31 +65,28 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/plugins/validator/validator.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
+            <state relative-caret-position="357">
               <caret line="112" column="33" selection-start-line="112" selection-start-column="33" selection-end-line="112" selection-end-column="51" />
             </state>
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/style.min.css">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/script/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="93">
-              <caret line="492" lean-forward="true" selection-start-line="492" selection-end-line="492" />
+            <state relative-caret-position="183">
+              <caret line="623" column="25" lean-forward="true" selection-start-line="623" selection-start-column="25" selection-end-line="623" selection-end-column="25" />
               <folding>
-                <element signature="e#20450#20522#0" />
-                <marker date="1602534117584" expanded="true" signature="849:1165" ph="..." />
-                <marker date="1602534117584" expanded="true" signature="2193:2401" ph="..." />
-                <marker date="1602534117584" expanded="true" signature="2631:2897" ph="..." />
-                <marker date="1602534117584" expanded="true" signature="8927:9064" ph="..." />
+                <marker date="1602584729324" expanded="true" signature="849:1165" ph="..." />
+                <marker date="1602584729324" expanded="true" signature="2193:2401" ph="..." />
               </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/filterEvalTryCatch/style/main.css">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -121,8 +122,9 @@
       <find>id=&quot;form</find>
       <find>inputEle</find>
       <find>inputFormElems</find>
-      <find>оши</find>
+      <find>text</find>
       <find>phone</find>
+      <find>оши</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -150,9 +152,10 @@
         <option value="$PROJECT_DIR$/script/scriptValid.js" />
         <option value="$PROJECT_DIR$/scriptValid.js" />
         <option value="$PROJECT_DIR$/plugins/validator/validator.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/server.php" />
         <option value="$PROJECT_DIR$/filterEvalTryCatch/js/script.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/filterEvalTryCatch/style/main.css" />
         <option value="$PROJECT_DIR$/script/script.js" />
       </list>
     </option>
@@ -180,7 +183,7 @@
             <path>
               <item name="Timer" type="b2602c69:ProjectViewProjectNode" />
               <item name="Timer" type="462c0819:PsiDirectoryNode" />
-              <item name="filterEvalTryCatch" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -224,17 +227,18 @@
       <updated>1600344615066</updated>
       <workItem from="1600344616465" duration="85973000" />
       <workItem from="1600848073249" duration="3348000" />
-      <workItem from="1601902934041" duration="151920000" />
+      <workItem from="1601902934041" duration="158811000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="387098000" />
+    <option name="totallyTimeSpent" value="393989000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15977742" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15977742" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -246,8 +250,8 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49761525" visible="true" weight="0.39076376" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5023847" side_tool="true" visible="true" weight="0.39076376" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49761525" visible="true" weight="0.053285968" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5023847" side_tool="true" weight="0.39253998" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -285,9 +289,6 @@
     <entry file="file://$PROJECT_DIR$/script/script3.js" />
     <entry file="file://$PROJECT_DIR$/script/index1.html" />
     <entry file="file://$PROJECT_DIR$/script/index2.html" />
-    <entry file="file://$PROJECT_DIR$/css/style.min.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/script/nowDate/index2.html">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -320,16 +321,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/plugins/validator/validator.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="112" column="33" selection-start-line="112" selection-start-column="33" selection-end-line="112" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/filterEvalTryCatch/style/main.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/filterEvalTryCatch/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="121">
@@ -353,24 +344,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4396">
-          <caret line="405" column="24" selection-start-line="405" selection-start-column="24" selection-end-line="405" selection-end-column="24" />
+        <state relative-caret-position="4896">
+          <caret line="315" column="85" selection-start-line="315" selection-start-column="85" selection-end-line="315" selection-end-column="85" />
           <folding>
             <element signature="n#div#0;n#header#0;n#main#0;n#body#0;n#html#0;n#!!top" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/filterEvalTryCatch/style/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="135" selection-start-line="135" selection-end-line="135" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plugins/validator/validator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="112" column="33" selection-start-line="112" selection-start-column="33" selection-end-line="112" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.min.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/script/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="492" lean-forward="true" selection-start-line="492" selection-end-line="492" />
+        <state relative-caret-position="183">
+          <caret line="623" column="25" lean-forward="true" selection-start-line="623" selection-start-column="25" selection-end-line="623" selection-end-column="25" />
           <folding>
-            <element signature="e#20450#20522#0" />
-            <marker date="1602534117584" expanded="true" signature="849:1165" ph="..." />
-            <marker date="1602534117584" expanded="true" signature="2193:2401" ph="..." />
-            <marker date="1602534117584" expanded="true" signature="2631:2897" ph="..." />
-            <marker date="1602534117584" expanded="true" signature="8927:9064" ph="..." />
+            <marker date="1602584729324" expanded="true" signature="849:1165" ph="..." />
+            <marker date="1602584729324" expanded="true" signature="2193:2401" ph="..." />
           </folding>
         </state>
       </provider>

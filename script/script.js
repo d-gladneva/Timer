@@ -486,7 +486,7 @@ window.addEventListener('DOMContentLoaded', () => {
         statusMessage.style.cssText = 'font-size: 2rem; color: #fff';
 
         const removePrompt = (elemWork) => {
-            if (elemWork.nextElementSibling&&elemWork.nextElementSibling.textContent === 'Заполните поле!') {
+            if (elemWork.nextElementSibling && elemWork.nextElementSibling.textContent === 'Заполните поле!') {
                 elemWork.nextElementSibling.remove();
             }
         };
@@ -573,13 +573,13 @@ window.addEventListener('DOMContentLoaded', () => {
                 const inputMail = elemWork.querySelector('input[name="user_email"]');
                 const inputPhone = elemWork.querySelector('input[name="user_phone"]');
                 const inputName = elemWork.querySelector('input[name="user_name"]');
-                const inputMessage = elemWork.querySelector('input[name="user_message"]');
-
+                const textMessage = elemWork.querySelector('textarea');
+                console.log(textMessage);
 
 
                 if (inputPhone.value !== '' && inputMail.value !== '' && inputName.value !== '') {
-                    if (!inputMessage || inputMessage && inputMessage.value !== '') {
-                        console.log(inputMessage);
+                    if (!textMessage || textMessage && textMessage.value !== '') {
+                        console.log(textMessage);
                         elemWork.appendChild(statusMessage);
                         statusMessage.textContent = loadMessage;
                         const formData = new FormData(elemWork);
@@ -596,6 +596,9 @@ window.addEventListener('DOMContentLoaded', () => {
                                     throw new Error('status network not 200');
                                 }
                                 statusMessage.textContent = succesMessage;
+                                if (textMessage) {
+                                    textMessage.value = '';
+                                }
                                 for (let i = 0; i < inputFormElems.length; i++) {
                                     inputFormElems[i].value = '';
                                 }
@@ -609,16 +612,15 @@ window.addEventListener('DOMContentLoaded', () => {
                                 statusMessage.textContent = errorMessage;
                                 console.log(error);
                             });
-                    } else if (inputMessage && inputMessage.value === ''){
-                        for (let i = 0; i < inputFormElems.length; i++){
-                            const errorDiv = document.createElement('div');
-                            errorDiv.textContent = 'Заполните поле!';
-                            if (inputFormElems[i].nextElementSibling && inputFormElems[i].nextElementSibling.textContent === 'Заполните поле!') {
-                                return;
-                            }
-                            if (inputFormElems[i].value === ''){
-                                inputFormElems[i].insertAdjacentElement('afterend', errorDiv);
-                            }
+                    } else if (textMessage && textMessage.value === '') {
+                        const errorDiv = document.createElement('div');
+                        errorDiv.textContent = 'Заполните поле!';
+                        errorDiv.style.cssText = 'color: red; line-height: 0px; height: 15px; font-size: 15px;';
+                        if (textMessage.nextElementSibling && textMessage.nextElementSibling.textContent === 'Заполните поле!') {
+                            return;
+                        }
+                        if (textMessage.value === '') {
+                            textMessage.insertAdjacentElement('afterend', errorDiv);
                         }
                     }
 
@@ -626,6 +628,7 @@ window.addEventListener('DOMContentLoaded', () => {
                     for (let i = 0; i < inputFormElems.length; i++) {
                         const errorDiv = document.createElement('div');
                         errorDiv.textContent = 'Заполните поле!';
+                        errorDiv.style.cssText = 'color: red; line-height: 0px; height: 15px; font-size: 15px;';
                         console.log(inputFormElems[i]);
                         if (inputFormElems[i].nextElementSibling && inputFormElems[i].nextElementSibling.textContent === 'Заполните поле!') {
                             return;
