@@ -31,7 +31,6 @@ const sendForm = () => {
         const checkEmail = /^\w+@\w+\.w{2,}$/;
 
         if (elemWork.name === 'user_phone') {
-            console.log(elemWork.name);
             elemWork.value = elemWork.value.replace(/^\++/g, '+');
             elemWork.value = elemWork.value.replace(/[^+0-9]/g, '');
             let valid = checkPhone.test(elemWork.value);
@@ -53,7 +52,6 @@ const sendForm = () => {
         }
 
         if (elemWork.name === 'user_email') {
-            console.log(elemWork.name);
             elemWork.value = elemWork.value.replace(/[^@a-zA-Z0-9.-_]/g, '');
             // if (!checkEmail.test(elemWork.value)) {
             //
@@ -75,7 +73,6 @@ const sendForm = () => {
         }
 
         if (elemWork.name === 'user_name') {
-            console.log(elemWork.name);
             elemWork.value = elemWork.value.replace(/[^а-яё\s]/ig, '');
         }
 
@@ -87,7 +84,6 @@ const sendForm = () => {
     };
 
     const sendAllForms = (elemWork) => {
-        console.dir(elemWork);
 
         if (elemWork.localName === 'form') {
             const inputFormElems = elemWork.querySelectorAll('input');
@@ -95,12 +91,10 @@ const sendForm = () => {
             const inputPhone = elemWork.querySelector('input[name="user_phone"]');
             const inputName = elemWork.querySelector('input[name="user_name"]');
             const textMessage = elemWork.querySelector('textarea');
-            console.log(textMessage);
 
 
             if (inputPhone.value !== '' && inputMail.value !== '' && inputName.value !== '') {
                 if (!textMessage || textMessage && textMessage.value !== '') {
-                    console.log(textMessage);
                     elemWork.appendChild(statusMessage);
                     statusMessage.textContent = loadMessage;
                     const formData = new FormData(elemWork);
@@ -111,8 +105,6 @@ const sendForm = () => {
 
                     postData(body)
                         .then((response) => {
-                            console.log(elemWork);
-                            console.log(response);
                             if (response.ok !== true) {
                                 throw new Error('status network not 200');
                             }
@@ -150,13 +142,11 @@ const sendForm = () => {
                     const errorDiv = document.createElement('div');
                     errorDiv.textContent = 'Заполните поле!';
                     errorDiv.style.cssText = 'color: red; line-height: 0px; height: 15px; font-size: 15px;';
-                    console.log(inputFormElems[i]);
                     if (inputFormElems[i].nextElementSibling && inputFormElems[i].nextElementSibling.textContent === 'Заполните поле!') {
                         return;
                     }
                     if (inputFormElems[i].value === '') {
                         inputFormElems[i].insertAdjacentElement('afterend', errorDiv);
-                        console.log(inputFormElems[i]);
                         // setTimeout(() => {
                         //     inputFormElems[i].nextElementSibling.remove();
                         // }, 2000);

@@ -34,6 +34,9 @@ const toggleMenu = () => {
                 menu.classList.toggle('active-menu');
             }
         } else if (menu.classList.contains('active-menu')) {
+            if (target.classList.contains('test')){
+                return;
+            }
             if (!target.classList.contains('active-menu')) {
                 menu.classList.remove('active-menu');
             } else if (target.classList.contains('close-btn'))

@@ -7,7 +7,7 @@ const smothScrollFromMenu = () => {
     };
     const scrollToTarget = (e) => {
         let target = e.target;
-        target = target.closest('.test');
+        // target = target.closest('.test');
         let targetId = target.getAttribute('to');
         if (target) {
             const targetTo = document.getElementById(targetId.substring(1, targetId.length));
@@ -24,6 +24,23 @@ const smothScrollFromMenu = () => {
     for (let i = 0; i < menuItems.length; i++) {
         menuItems[i].addEventListener('click', scrollToTarget);
     }
+
+    const scrollFromBtn = (e) => {
+        let target = e.target;
+        target = target.closest('.test');
+        let targetId = target.getAttribute('to');
+        if (target) {
+            const targetTo = document.getElementById(targetId.substring(1, targetId.length));
+            const targetPosition = getPosition(targetTo);
+            const offsetTargetPosition = targetPosition;
+            window.scrollTo({
+                top: offsetTargetPosition,
+                behavior: 'smooth'
+            });
+        }
+    };
+
+    btnScroll.addEventListener('click', scrollFromBtn);
 };
 
 export default smothScrollFromMenu;
