@@ -1,14 +1,9 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.export = {
-    entry: {
-        main: './src/index.js'
-    },
+    entry: './src/index.js',
     watch: true,
-    devServer: {
-        contentBase: './dist',
-        overlay: true
-    },
     output: {
         path: path.resolve(__dirname, './dist'),
         filename: '[name].js',
@@ -17,10 +12,27 @@ module.export = {
     module: {
         rules: [
             {
-                test: /\.js$/,
-                loader: 'babel-loader',
-                exclude: '/node_modules/'
-            }
-        ]
-    }
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                ],
+            },
+        ],
+    },
+    devServer: {
+        contentBase: path.join(__dirname, 'dist'),
+        compress: true,
+        port: 9080,
+        overlay: true,
+        historyApiFallback: true,
+    },
+    resolve: {
+        extensions: ['.js'],
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: './index.html',
+        }),
+    ],
 };

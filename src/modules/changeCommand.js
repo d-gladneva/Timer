@@ -1,7 +1,7 @@
 const changeCommand = () => {
     const command = document.getElementById('command');
     command.addEventListener('mouseover', (e) => {
-        console.log(6);
+        console.log(5);
         let target = e.target;
         if (target.classList.contains('command__photo')) {
             let dataImgValue = target.getAttribute('data-img');
@@ -11,7 +11,7 @@ const changeCommand = () => {
         }
     });
     command.addEventListener('mouseout', (e) => {
-        console.log(22);
+        console.log(24);
         let target = e.target;
         let dataImgValue = target.getAttribute('data-img');
         let dataSrcValue = target.getAttribute('src');
