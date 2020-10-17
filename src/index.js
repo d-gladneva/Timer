@@ -7,6 +7,11 @@ import sendForm from './modules/sendForm'
 import smothScrollFromMenu from './modules/smothScrollFromMenu'
 import changeCommand from './modules/changeCommand'
 import startSlider from "./modules/slider";
+import '@babel/polyfill';
+import 'nodelist-foreach-polyfill';
+import elementClosest from 'element-closest';
+elementClosest(window);
+
 
 //Timer
 countTimer('31 december  2020');
